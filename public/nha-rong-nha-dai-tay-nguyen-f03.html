@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Số hóa Di sản Nhà Rông, Nhà Dài và Không gian cư trú Tây Nguyên | Đề tài F03</title>
+  <meta name="description" content="Đồ án số hóa di sản văn hóa Tây Nguyên - Mã đề tài: F03. Tác giả: Nguyễn Văn Hoàng - PH64335 - Nhóm 2.">
+  <meta property="og:title" content="Bảo tàng số Di sản Nhà Rông - Nhà Dài Tây Nguyên">
+  <meta property="og:description" content="Khám phá kiến trúc, mặt bằng tương tác, sinh hoạt nghi lễ và trợ lý AI RAG bản địa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            wood: {
+              dark: '#2D2424',
+              earth: '#8B5E34',
+              straw: '#E0A96D',
+              basalt: '#C88A3D',
+              ivory: '#F5F5F0'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    h1, h2, h3, h4, h5, h6 { text-decoration: none !important; }
+    .pulse-hotspot {
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+    @keyframes pulseGlow {
+      0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(200, 138, 61, 0.7); }
+      70% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 10px rgba(200, 138, 61, 0); }
+      100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(200, 138, 61, 0); }
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1c1917; }
+    ::-webkit-scrollbar-thumb { background: #8B5E34; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #C88A3D; }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-900 dark:bg-[#2D2424] dark:text-stone-100 transition-colors duration-300 antialiased min-h-screen flex flex-col">
+  <!-- Academic Banner -->
+  <div id="academic-bar" class="bg-[#8B5E34] text-white text-xs py-2 px-4 text-center font-medium shadow-sm flex items-center justify-between flex-wrap gap-2">
+    <div class="flex items-center gap-2 mx-auto">
+      <span class="font-bold tracking-wide">ĐỒ ÁN SỐ HÓA DI SẢN:</span>
+      <span>“Nhà Rông, Nhà Dài và Không gian cư trú cộng đồng” (Mã đề tài: F03 - Vùng văn hóa Tây Nguyên)</span>
+      <span class="opacity-75">•</span>
+      <span class="font-semibold text-amber-200">Tác giả: Nguyễn Văn Hoàng (PH64335) - Nhóm 2</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#1C1817]/95 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 shadow-sm transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <!-- Brand Wordmark -->
+      <a href="#home" onclick="switchTab('home')" class="flex items-center gap-2.5 font-serif font-bold text-base sm:text-lg text-stone-900 dark:text-stone-100 whitespace-nowrap shrink-0 hover:text-[#C88A3D] transition">
+        <span class="w-8 h-8 rounded-lg bg-[#C88A3D] text-stone-950 font-bold flex items-center justify-center font-mono text-sm shadow">F03</span>
+        <span>Di sản Tây Nguyên</span>
+      </a>
+
+      <!-- Desktop Nav Tabs -->
+      <nav class="hidden md:flex items-center gap-1 text-xs lg:text-sm font-medium">
+        <button onclick="switchTab('home')" class="nav-btn px-3 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#C88A3D] dark:hover:text-[#E0A96D]" data-tab="home">Trang chủ</button>
+        <button onclick="switchTab('architecture')" class="nav-btn px-3 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#C88A3D] dark:hover:text-[#E0A96D]" data-tab="architecture">Kiến trúc gỗ</button>
+        <button onclick="switchTab('floorplan')" class="nav-btn px-3 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#C88A3D] dark:hover:text-[#E0A96D]" data-tab="floorplan">Mặt bằng</button>
+        <button onclick="switchTab('rituals')" class="nav-btn px-3 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#C88A3D] dark:hover:text-[#E0A96D]" data-tab="rituals">Nghi lễ</button>
+        <button onclick="switchTab('map')" class="nav-btn px-3 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#C88A3D] dark:hover:text-[#E0A96D]" data-tab="map">Bản đồ 5 tỉnh</button>
+        <button onclick="switchTab('sources')" class="nav-btn px-3 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#C88A3D] dark:hover:text-[#E0A96D]" data-tab="sources">Nguồn tư liệu</button>
+      </nav>
+
+      <!-- Action Zone -->
+      <div class="flex items-center gap-2">
+        <!-- Theme Toggle -->
+        <button onclick="toggleDarkMode()" class="p-2 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:bg-stone-200 transition" title="Chuyển chế độ sáng/tối">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- AI Assistant Trigger -->
+        <button onclick="openAiModal()" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#C88A3D] text-stone-950 font-bold text-xs sm:text-sm hover:bg-[#E0A96D] transition shadow">
+          <span>Trợ lý AI</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main id="app-content" class="flex-1">
+    <!-- Tab contents rendered dynamically via pure JS below -->
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-stone-900 text-stone-400 text-xs py-8 px-4 border-t border-stone-800 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <div class="font-serif font-bold text-stone-200 text-sm">Đồ án F03: Nhà Rông, Nhà Dài và Không gian cư trú Tây Nguyên</div>
+        <div class="mt-1">Tác giả: Nguyễn Văn Hoàng • MSSV: PH64335 • Nhóm 2 • Khoa Di sản Văn hóa</div>
+      </div>
+      <div class="flex items-center gap-4 text-stone-400">
+        <a href="https://dsvh.gov.vn" target="_blank" rel="noopener noreferrer" class="hover:text-[#C88A3D]">Cục Di sản</a>
+        <a href="https://bvhttdl.gov.vn" target="_blank" rel="noopener noreferrer" class="hover:text-[#C88A3D]">Bộ VHTTDL</a>
+        <a href="https://vme.org.vn" target="_blank" rel="noopener noreferrer" class="hover:text-[#C88A3D]">Bảo tàng DTH</a>
+        <a href="https://vicas.org.vn" target="_blank" rel="noopener noreferrer" class="hover:text-[#C88A3D]">Viện VICAS</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Record Detail Modal Container -->
+  <div id="detail-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-3xl rounded-3xl bg-white dark:bg-stone-900 border border-stone-800 p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button onclick="closeDetailModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white p-2">✕</button>
+      <div id="detail-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- AI Assistant Modal Container -->
+  <div id="ai-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4">
+    <div class="relative w-full max-w-2xl rounded-3xl bg-white dark:bg-stone-900 border border-stone-800 p-6 shadow-2xl flex flex-col h-[600px] max-h-[90vh]">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-800">
+        <div class="flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-[#C88A3D] text-stone-950 font-bold flex items-center justify-center">AI</span>
+          <div>
+            <h3 class="font-serif font-bold text-stone-100 text-sm">Trợ lý Di sản Số học Tây Nguyên (F03)</h3>
+            <p class="text-[11px] text-stone-400">RAG Mini: Trả lời có trích dẫn Record ID & Source ID</p>
+          </div>
+        </div>
+        <button onclick="closeAiModal()" class="text-stone-400 hover:text-white p-2">✕</button>
+      </div>
+
+      <!-- API Key Notice & Config -->
+      <div class="py-2 px-3 bg-amber-500/10 border border-amber-500/20 rounded-xl my-2 flex items-center justify-between text-xs text-amber-300">
+        <span>⚠️ API Key chỉ lưu cục bộ trên trình duyệt (localStorage).</span>
+        <button onclick="promptApiKey()" class="text-xs font-bold underline text-[#E0A96D]">Cài đặt Key</button>
+      </div>
+
+      <!-- Chat Messages Scroll Area -->
+      <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3 p-2 text-xs sm:text-sm">
+        <div class="p-3 rounded-2xl bg-stone-800 text-stone-200">
+          Xin chào! Tôi là Trợ lý Di sản F03. Tôi chỉ trả lời dựa trên dữ liệu 30+ bản ghi và 7 nguồn tư liệu của đề tài, bắt buộc trích dẫn Record ID & Source ID. Bạn cần tra cứu gì về Nhà Rông hay Nhà Dài?
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="pt-3 border-t border-stone-800 flex gap-2">
+        <input id="chat-input" type="text" placeholder="Hỏi về mái nhà rông, cầu thang cái, lễ bỏ mả..." class="flex-1 px-4 py-2.5 rounded-xl bg-stone-800 border border-stone-700 text-stone-100 text-xs sm:text-sm focus:outline-none focus:border-[#C88A3D]" onkeydown="if(event.key==='Enter') sendChatMessage()">
+        <button onclick="sendChatMessage()" class="px-5 py-2.5 rounded-xl bg-[#C88A3D] text-stone-950 font-bold text-xs sm:text-sm hover:bg-[#E0A96D] transition">Gửi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Embedded Data & Single-File Application Logic -->
+  <script>
+    window.disanData = {
+  "projectInfo": {
+    "titleVi": "Nhà Rông, Nhà Dài và Không gian cư trú cộng đồng",
+    "titleEn": "Rong House, Longhouse and Communal Living Spaces",
+    "projectCode": "F03 - Vùng văn hóa Tây Nguyên",
+    "culturalRegionVi": "Vùng văn hóa Tây Nguyên (Kon Tum, Gia Lai, Đắk Lắk, Đắk Nông, Lâm Đồng)",
+    "culturalRegionEn": "Central Highlands Cultural Region (Vietnam)",
+    "author": "Nguyễn Văn Hoàng",
+    "studentId": "PH64335",
+    "group": "Nhóm 2",
+    "academicYear": "2024 - 2026",
+    "advisorVi": "Khoa Di sản Văn hóa & Truyền thông Đa phương tiện",
+    "advisorEn": "Faculty of Cultural Heritage & Multimedia"
+  },
+  "records": [
+    {
+      "id": "REC-KT01",
+      "category": "architecture",
+      "titleVi": "Mái Nhà Rông hình lưỡi búa vút cao",
+      "titleEn": "Soaring Axe-Blade Shaped Roof of the Rong House",
+      "indigenousName": "Yơng / Pơ-xơr Rông",
+      "elementOrType": "Hệ mái & Kết cấu bao che",
+      "culturalRegion": "Bắc Tây Nguyên",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Kon Kơ Tu, xã Đắk Rơ Wa, TP. Kon Tum",
+      "historicalLocation": "Khu vực thung lũng sông Đăk Bla, vùng cư trú cổ Ba Na Jơ Lâng",
+      "descriptionVi": "Mái nhà Rông Ba Na cao từ 12 đến 16 mét, vút thẳng lên bầu trời như mũi tên hoặc lưỡi rìu ngửa, biểu tượng của sức mạnh đực tính và lòng kiêu hãnh của buôn làng. Mái được lợp bằng cỏ tranh dày trên 20cm, đan kết bằng mây rừng, có các dải hoa văn gãy khúc trang trí dọc bờ nóc.",
+      "descriptionEn": "The Ba Na Rong roof towers 12 to 16 meters high, resembling an upward axe blade, symbolizing communal masculinity, pride, and defense. Thatched with cogon grass over 20cm thick and bound with forest rattan.",
+      "architecturalRole": "Chịu gió bão cao nguyên, tạo điểm nhấn cảnh quan buôn làng từ xa, điều hòa nhiệt độ bên trong mát mẻ quanh năm.",
+      "dimensionOrMaterial": "Chiều cao 14.5m, cỏ tranh phơi khô 3 nắng, lạt mây Song bấc dẻo dai.",
+      "taboosAndRules": "Phụ nữ không được trèo lên mái; cấm bẻ cành cây hoặc mang vật uế tạp lên nóc nhà Rông.",
+      "sourceId": "SRC-01",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Mái Nhà Rông Ba Na vút cao tới 16 mét, tượng trưng cho lưỡi rìu thần bảo vệ buôn làng. Cấu trúc mái dốc giúp thoát nước mưa tức thì và che chở cho cả cộng đồng.",
+      "audioTextEn": "The soaring axe-blade roof of the Ba Na Rong house rises up to 16 meters, representing divine protection and communal pride across the highlands."
+    },
+    {
+      "id": "REC-KT02",
+      "category": "architecture",
+      "titleVi": "Cột cái Jơng rông - Trụ cột thiêng",
+      "titleEn": "Main Sacred Pillar (Jơng Rông)",
+      "indigenousName": "Jơng Rông",
+      "elementOrType": "Cột trụ chịu lực chính",
+      "culturalRegion": "Bắc Tây Nguyên",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Xã Đắk Rơ Wa, Kon Tum",
+      "historicalLocation": "Rừng thiêng đầu nguồn suối Đăk Bla",
+      "descriptionVi": "Hệ 8 đến 12 cột cái tròn bằng thân cây gỗ Cà Chít hoặc Gõ đỏ cổ thụ, đường kính từ 60cm đến 80cm, chôn sâu hơn 1m xuống lòng đất bazan. Đây là xương sống chịu toàn bộ tải trọng của hệ khung dầm và mái khổng lồ.",
+      "descriptionEn": "A framework of 8 to 12 massive timber columns made from ironwood (Ca Chit), 60-80cm in diameter, sunk deeply into basalt soil.",
+      "architecturalRole": "Chịu tải trọng thẳng đứng của giàn dầm sàn và giàn mái nặng hàng chục tấn.",
+      "dimensionOrMaterial": "Gỗ Cà Chít nguyên khối, đường kính 70cm, cao thông thủy 9m.",
+      "taboosAndRules": "Trước khi đốn hạ cây làm cột, già làng phải làm lễ xin phép thần Rừng Yang Bri; tuyệt đối không đục lỗ xuyên tâm cột cái.",
+      "sourceId": "SRC-06",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Cột Jơng Rông được đẽo từ thân gỗ Cà Chít trăm năm tuổi, tượng trưng cho cốt cách kiên cường bất khuất của người đàn ông Ba Na trước thiên nhiên.",
+      "audioTextEn": "The Jong Rong sacred pillar is carved from centuries-old hardwood, standing as the unyielding backbone of the village hall."
+    },
+    {
+      "id": "REC-KT03",
+      "category": "architecture",
+      "titleVi": "Cầu thang Cái (Kpan Tangga Ê Đê) khắc đôi bầu ngực mẹ",
+      "titleEn": "Female Ladder (Kpan Tangga) with Maternal Breast Carvings",
+      "indigenousName": "Kpan Tangga (Ngă)",
+      "elementOrType": "Thang lên nhà sàn & Điêu khắc biểu tượng",
+      "culturalRegion": "Đắk Lắk - Nam Tây Nguyên",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, TP. Buôn Ma Thuột, Đắk Lắk",
+      "historicalLocation": "Vùng cao nguyên K'pă cổ đại",
+      "descriptionVi": "Cầu thang chính dẫn vào nhà dài Ê Đê được đẽo từ một thân gỗ nguyên khối dài 5m, bản rộng 60cm. Đỉnh thang uốn cong hình vầng trăng khuyết và chạm khắc nổi đôi bầu ngực mẹ đầy đặn, tượng trưng cho uy quyền mẫu hệ và nguồn sữa nuôi dưỡng nòi giống.",
+      "descriptionEn": "The primary ceremonial staircase carved from a single massive timber log. The top curves gracefully with crescent moon and twin sculpted maternal breasts, celebrating matriarchal dignity and fertile abundance.",
+      "architecturalRole": "Lối tiếp cận chính diện vào gian khách Gah; dành riêng cho phụ nữ trong gia đình và khách quý.",
+      "dimensionOrMaterial": "Gỗ sao hoặc hương nguyên khối, dài 4.8m, rộng 65cm, có 7 bậc số lẻ may mắn.",
+      "taboosAndRules": "Khách nam không được tùy tiện bước lên khi chưa được gia chủ nữ chào đón; bước lên bậc phải nhìn thẳng trang nghiêm.",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Đôi bầu ngực mẹ và vầng trăng khuyết trên cầu thang Cái nhà dài Ê Đê là tuyên ngôn thiêng liêng về quyền uy của người phụ nữ mẫu hệ và lòng tri ân dòng sữa cội nguồn.",
+      "audioTextEn": "The crescent moon and breasts carved on the female ladder embody the sacred matrilineal power and maternal nourishment of the E De people."
+    },
+    {
+      "id": "REC-KT04",
+      "category": "architecture",
+      "titleVi": "Cầu thang Đực (Tangga Liêk)",
+      "titleEn": "Male Ladder (Tangga Liek)",
+      "indigenousName": "Tangga Liêk",
+      "elementOrType": "Thang phụ nhà sàn",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, Đắk Lắk",
+      "historicalLocation": "Buôn Ako Siêr, Đắk Lắk",
+      "descriptionVi": "Cầu thang đặt cạnh cầu thang Cái nhưng kích thước nhỏ hơn, không chạm trổ bầu ngực, dùng cho đàn ông và con trai trong nhà đi lại hàng ngày hoặc mang vác nông cụ mùa gặt.",
+      "descriptionEn": "Located adjacent to the Female Staircase, smaller in profile without breast relief, serving daily chores and male household members.",
+      "architecturalRole": "Giao thông thứ cấp tránh ùn tắc và bảo tồn sự tôn nghiêm của thang lễ nghi.",
+      "dimensionOrMaterial": "Gỗ dầu rái, dài 4.2m, 5 hoặc 7 bậc.",
+      "taboosAndRules": "Trong các lễ cưới, chú rể bước lên thang đực nhưng phải được mẹ vợ trao bầu nước tại chân thang.",
+      "sourceId": "SRC-02",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Cầu thang Đực mộc mạc đặt cạnh cầu thang Cái phản ánh sự phân công vai trò lao động hài hòa trong gia đình mẫu hệ Ê Đê.",
+      "audioTextEn": "The modest Male Ladder stands side by side with the grand Female Ladder, illustrating harmonious household roles in matrilineal society."
+    },
+    {
+      "id": "REC-KT05",
+      "category": "architecture",
+      "titleVi": "Hệ mộng đẽo và lạt mây chằng buộc dẻo dai",
+      "titleEn": "Traditional Joinery & Rattan Lashings",
+      "indigenousName": "Kơ-noong Mây",
+      "elementOrType": "Liên kết cấu kiện",
+      "culturalRegion": "Tây Nguyên toàn vùng",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Đê Ktu, huyện Mang Yang, Gia Lai",
+      "historicalLocation": "Vùng cao nguyên Pleiku cổ",
+      "descriptionVi": "Toàn bộ nhà Rông và nhà Dài truyền thống không hề sử dụng một chiếc đinh sắt nào. Các thanh xà ngang dọc được liên kết bằng mộng ngoàm ôm khít và bện chặt hàng nghìn vòng mây rừng dẻo dai chống rung chấn.",
+      "descriptionEn": "Constructed entirely without iron nails. Timber members connect through notched friction joinery reinforced by thousands of intricate rattan bindings.",
+      "architecturalRole": "Đảm bảo công trình có tính đàn hồi trước giông lốc gió ngàn và địa chấn nhẹ.",
+      "dimensionOrMaterial": "Mây nước (Calamus) ngâm bùn 3 tháng chống mọt, vuốt dẹp.",
+      "taboosAndRules": "Mây chằng chỉ được đan vào ngày trăng non; nếu lạt bị đứt khi đang buộc phải cúng trứng gà tạ lỗi thần linh.",
+      "sourceId": "SRC-02",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Kỹ thuật chằng buộc mây tre của người Tây Nguyên thể hiện đỉnh cao tri thức bản địa, giúp ngôi nhà vững vàng qua hàng trăm mùa mưa nắng mà không cần đến một chiếc đinh sắt.",
+      "audioTextEn": "The ingenious rattan joint binding technique exemplifies indigenous engineering, withstanding mountain storms without a single metallic fastener."
+    },
+    {
+      "id": "REC-KT06",
+      "category": "architecture",
+      "titleVi": "Sàn tre đập dập và ván gỗ xẻ tay",
+      "titleEn": "Crushed Bamboo & Hand-Hewn Plank Flooring",
+      "indigenousName": "Kpal Jơng",
+      "elementOrType": "Mặt sàn chịu tải",
+      "culturalRegion": "Gia Lai - Kon Tum",
+      "ethnicGroup": "Gia Rai",
+      "currentLocation": "Xã Ia Mơ Nông, huyện Chư Păh, Gia Lai",
+      "historicalLocation": "Làng Jrai Arap cổ ven sông Sê San",
+      "descriptionVi": "Mặt sàn nhà rông được ghép từ những ống tre lồ ô già luộc nước sôi đập dập phẳng hoặc thân gỗ rừng xẻ bằng rìu tay, có khoảng hở 1cm để thông thoáng và dễ vệ sinh quét dọn.",
+      "descriptionEn": "Flooring fashioned from boiled flattened giant bamboo culms or rough-hewn timber slats with 1cm air vents ensuring thermal comfort and cleanliness.",
+      "architecturalRole": "Cách ẩm mặt đất 2-3m, ngăn thú dữ và côn trùng độc hại bò lên.",
+      "dimensionOrMaterial": "Tre lồ ô già trên 5 năm tuổi hoặc ván gỗ kiền kiền dày 4cm.",
+      "taboosAndRules": "Không được quét rác rơi trực tiếp xuống gầm sàn nơi đàn trâu đang trú ngụ.",
+      "sourceId": "SRC-05",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Sàn nhà rông cao cách mặt đất hơn 2 mét, lát bằng nứa đập dập thơm mùi rừng già, đem lại cảm giác êm ái thoáng mát cho các buổi hội họp buôn làng.",
+      "audioTextEn": "Elevated two meters above the ground, the hand-flattened bamboo floor provides natural ventilation and safety against wilderness wildlife."
+    },
+    {
+      "id": "REC-KT07",
+      "category": "architecture",
+      "titleVi": "Vách nghiêng vòm hình mui thuyền ngửa",
+      "titleEn": "Inverted Boat-Hull Outward Inclined Walls",
+      "indigenousName": "Rông Klông",
+      "elementOrType": "Vách ngăn & Cấu trúc bao che",
+      "culturalRegion": "Bắc Tây Nguyên",
+      "ethnicGroup": "Xơ Đăng",
+      "currentLocation": "Huyện Đắk Tô, Kon Tum",
+      "historicalLocation": "Vùng chân núi Ngọc Linh",
+      "descriptionVi": "Vách hai bên hông nhà Rông Xơ Đăng không dựng thẳng đứng mà nghiêng chếch ra ngoài từ 10 đến 15 độ, tạo thành hình lòng thuyền úp ngược hoặc cánh cung căng gió.",
+      "descriptionEn": "Exterior side walls inclined outward by 10 to 15 degrees, evoking an overturned boat hull or a drawn war bow resisting mountain updrafts.",
+      "architecturalRole": "Mở rộng thể tích không gian sử dụng bên trong và triệt tiêu áp lực gió xoáy cao nguyên.",
+      "dimensionOrMaterial": "Khung gỗ rừng chịu lực, phên đan nứa hoa văn quả trám.",
+      "taboosAndRules": "Cấm đóng đinh hoặc khắc tên riêng lên phên vách thiêng.",
+      "sourceId": "SRC-01",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Độ nghiêng tinh tế của vách nhà Rông Xơ Đăng giúp ngôi nhà đứng vững trước những cơn gió lốc dữ dội quanh rặng núi Ngọc Linh hùng vĩ.",
+      "audioTextEn": "The outward inclined walls deflect ferocious mountain drafts around Mount Ngoc Linh while expanding indoor spatial capacity."
+    },
+    {
+      "id": "REC-KT08",
+      "category": "architecture",
+      "titleVi": "Dải hoa văn gãy khúc bờ nóc Rông (Bong-gơr)",
+      "titleEn": "Roof Ridge Geometric Cresting (Bong-gơr)",
+      "indigenousName": "Bong-gơr / Teu-rông",
+      "elementOrType": "Chi tiết trang trí đỉnh nóc",
+      "culturalRegion": "Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Kon Klor, TP. Kon Tum",
+      "historicalLocation": "Vùng Ba Na Kpơng",
+      "descriptionVi": "Chạy dọc theo đỉnh sống mái dài hơn 15m là dải hoa văn bện từ cỏ tranh nhuộm nước lá cây và tre nan, uốn lượn hình rau dớn, mặt trời tỏa tia và ngọn sừng trâu cách điệu.",
+      "descriptionEn": "A braided decorative crest running along the entire 15m roof ridge, displaying fern tendril spirals, sunbursts, and stylized buffalo horn silhouettes.",
+      "architecturalRole": "Chắn nước mưa ngấm vào đường tiếp giáp hai mái ngói tranh và định vị tầm nhìn từ các thung lũng xa.",
+      "dimensionOrMaterial": "Tre cật chuốt bóng, vỏ cây nhuộm đỏ tự nhiên, mây nước.",
+      "taboosAndRules": "Người đan hoa văn bờ nóc phải là nghệ nhân cao niên được dân làng bầu chọn.",
+      "sourceId": "SRC-05",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Bờ nóc nhà Rông rực rỡ với họa tiết rau dớn và sừng trâu, nơi đón nhận ánh mặt trời ban mai và kết nối buôn làng với đấng Yang tối cao.",
+      "audioTextEn": "The rooftop crest with buffalo horn emblems greets the highland sunrise, spiritually connecting the community to supreme deities."
+    },
+    {
+      "id": "REC-KT09",
+      "category": "architecture",
+      "titleVi": "Bậc cửa hiên Drip đón gió nhà Dài",
+      "titleEn": "Open Front Veranda Porch (Drip)",
+      "indigenousName": "Drip / Drap",
+      "elementOrType": "Hiên tiền sảnh bán lộ thiên",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Xã Cư Suê, huyện Cư M'gar, Đắk Lắk",
+      "historicalLocation": "Vùng bồn địa Krông Ana",
+      "descriptionVi": "Sân hiên trước nhà dài lát ván dày, nơi khách nghỉ chân trước khi bước vào gian Gah, nơi phụ nữ giã gạo dưới bóng râm và các nghệ nhân ngồi đan gùi những chiều buôn vắng.",
+      "descriptionEn": "The spacious semi-open wooden veranda where visitors pause, matriarchs pound fragrant rice, and craftsmen weave back-baskets in the afternoon breeze.",
+      "architecturalRole": "Vùng đệm chuyển tiếp khí hậu giữa bên ngoài nắng gắt và không gian mát mẻ bên trong nhà sàn.",
+      "dimensionOrMaterial": "Diện tích 25-40m2, ván gỗ kền kền nguyên phiến dày 5cm.",
+      "taboosAndRules": "Khách phải để lại dao rựa và cởi giầy dép ở góc hiên trước khi vào nhà.",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Hiên Drip là nơi đón gió ngàn, điểm dừng chân đầu tiên chan chứa tình hiếu khách của người Ê Đê trước khi bước vào căn nhà dài huyền thoại.",
+      "audioTextEn": "The Drip veranda serves as a refreshing threshold of hospitality before one enters the legendary interior of an E De longhouse."
+    },
+    {
+      "id": "REC-KT10",
+      "category": "architecture",
+      "titleVi": "Mái dốc thấp kéo dài nhà Dài Ê Đê",
+      "titleEn": "Elongated Low-Pitched Thatched Roof of E De Longhouse",
+      "indigenousName": "Khung Pơ-kơr Sang",
+      "elementOrType": "Mái nhà dài truyền thống",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Ky, TP. Buôn Ma Thuột",
+      "historicalLocation": "Vùng cao nguyên Đắk Lắk cổ",
+      "descriptionVi": "Khác với mái nhà Rông vút cao, mái nhà dài Ê Đê xuôi đều thoai thoải, mép mái hạ thấp sát gần sàn để cản gió bão và giữ hơi ấm bếp lửa xua đuổi côn trùng rừng nhiệt đới.",
+      "descriptionEn": "Contrasting the soaring Rong roof, the E De longhouse roof slopes gently and reaches low near floor level, sheltering against monsoons while conserving hearth warmth.",
+      "architecturalRole": "Che chắn chống mưa lớn và giảm thiểu tối đa lực cản gió lốc ngang.",
+      "dimensionOrMaterial": "Chiều dài từ 30m đến hơn 100m, cỏ tranh đan tấm dày 15cm.",
+      "taboosAndRules": "Mỗi khi gia đình có con gái lấy chồng và nối thêm gian, mái phải được lợp liền mạch không để lộ vết cắt.",
+      "sourceId": "SRC-03",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Mái nhà dài Ê Đê trải dài tựa tiếng chiêng ngân, có ngôi nhà dài hơn cả trăm mét chứa đựng tới 5 thế hệ cùng quây quần dưới một mái ấm đại gia đình mẫu hệ.",
+      "audioTextEn": "The continuous low roofline stretches like a resounding gong echo, accommodating up to five generations under a single matriarchal roof."
+    },
+    {
+      "id": "REC-KG01",
+      "category": "space",
+      "titleVi": "Gian Gah - Không gian cộng đồng & tiếp khách nhà Dài",
+      "titleEn": "Gah Chamber - Communal & Guest Hall of E De Longhouse",
+      "indigenousName": "Gah",
+      "elementOrType": "Không gian công cộng nửa trước nhà",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, TP. Buôn Ma Thuột",
+      "historicalLocation": "Toàn bộ vùng cư trú dân tộc Ê Đê Kpă",
+      "descriptionVi": "Gian Gah chiếm từ 1/3 đến 1/2 chiều dài ngôi nhà dài, là không gian mở hoàn toàn không có vách ngăn. Đây là trung tâm danh dự nơi đón tiếp khách quý, tổ chức các nghi lễ gia tộc, cúng sức khỏe, uống rượu cần và tấu cồng chiêng.",
+      "descriptionEn": "Gah occupies the first third to half of the longhouse without interior partitions. It is the noble stage for welcoming guests, hosting clan rituals, communal pipe wine drinking, and gong performances.",
+      "architecturalRole": "Trung tâm giao tiếp xã hội, kết nối các thế hệ và tiếp đón cộng đồng buôn làng.",
+      "dimensionOrMaterial": "Rộng 5.5m - 6.5m, dài từ 15m đến 35m, sàn gỗ bóng láng mài bằng lá ráp.",
+      "taboosAndRules": "Phụ nữ không được ngồi chồm hổm trước mặt khách; khách lạ không được tự ý đi qua vách ngăn tiến sâu vào gian Ok phía sau.",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Gian Gah là linh hồn mở rộng của nhà dài Ê Đê, nơi âm thanh cồng chiêng ngân vang và men rượu cần gắn kết tình nghĩa buôn làng bền chặt.",
+      "audioTextEn": "The Gah chamber is the beating heart of the E De longhouse, where gong harmonies and earthen jar wine forge unbreakable communal bonds."
+    },
+    {
+      "id": "REC-KG02",
+      "category": "space",
+      "titleVi": "Gian Ok - Không gian buồng riêng các cặp vợ chồng mẫu hệ",
+      "titleEn": "Ok Chamber - Private Family Cubicles of Matrilineal Daughters",
+      "indigenousName": "Ôk",
+      "elementOrType": "Không gian sinh hoạt riêng tư nửa sau",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, Đắk Lắk",
+      "historicalLocation": "Khu vực thung lũng sông Sêrêpôk",
+      "descriptionVi": "Gian Ok nằm phía sau vách ngăn của gian Gah, được chia thành một hành lang chạy dọc và các buồng ngủ nhỏ riêng biệt. Con gái lớn lấy chồng ở buồng gần gian Gah nhất, các con gái út hoặc chưa chồng ở các buồng tiếp nối dần về sau.",
+      "descriptionEn": "Ok lies behind the partition separating the Gah hall, featuring a lateral passage flanked by private sleeping quarters for married daughters and their husbands.",
+      "architecturalRole": "Bảo đảm quyền riêng tư cho các gia đình hạt nhân thuộc đại gia đình mẫu hệ.",
+      "dimensionOrMaterial": "Mỗi buồng rộng khoảng 10-15m2, ngăn bằng vách phên nứa đan thưa đón gió.",
+      "taboosAndRules": "Người ngoài buôn và đàn ông không có quan hệ huyết thống tuyệt đối không được bước chân vào buồng ngủ của phụ nữ.",
+      "sourceId": "SRC-03",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Gian Ok minh chứng cho trật tự mẫu hệ nghiêm cẩn. Mỗi khi một cô con gái lập gia đình, ngôi nhà lại được nối dài thêm một gian Ok để đón chàng rể mới.",
+      "audioTextEn": "The Ok quarters reflect strict matrilineal order, extended incrementally whenever a daughter marries to welcome her bridegroom."
+    },
+    {
+      "id": "REC-KG03",
+      "category": "space",
+      "titleVi": "Ghế dài K'pan - Băng ghế danh dự độc mộc",
+      "titleEn": "K'pan Sacred Bench - Monolithic Honor Log Seat",
+      "indigenousName": "K'pan",
+      "elementOrType": "Nội thất nghi lễ & Biểu tượng vương quyền gia tộc",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Bảo tàng Đắk Lắk, TP. Buôn Ma Thuột",
+      "historicalLocation": "Buôn Ky và buôn Đôn cổ",
+      "descriptionVi": "K'pan là chiếc ghế dài từ 10m đến 20m, đẽo thủ công từ một thân cây gỗ sao hoặc cà chít cổ thụ to hai người ôm. Ghế kê dọc vách phía Tây của gian Gah, dùng làm chỗ ngồi cho dàn nghệ nhân tấu cồng chiêng trong ngày hội lớn.",
+      "descriptionEn": "A monolithic bench 10 to 20 meters long carved from a single immense hardwood trunk, placed along the western wall of Gah for master gong musicians.",
+      "architecturalRole": "Định vị chỗ ngồi trang trọng nhất gian khách, biểu hiện sự giàu có và thế lực của gia chủ.",
+      "dimensionOrMaterial": "Gỗ sao nguyên khối, dài 16m, rộng 0.5m, dày 10cm, được mài bóng nhẵn.",
+      "taboosAndRules": "Phải tổ chức đại lễ cúng 7 con trâu trong 7 ngày đêm mới được rước K'pan vào nhà; người chưa tẩy trần không được ngồi.",
+      "sourceId": "SRC-02",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Ghế K'pan độc mộc dài tới 16 mét là báu vật truyền đời của nhà dài Ê Đê, nơi những nghệ nhân kỳ cựu ngồi hòa tấu dàn cồng chiêng vang động núi rừng.",
+      "audioTextEn": "The monumental monolithic Kpan bench stands as a priceless heirloom where elder virtuosos perform thunderous gong symphonies."
+    },
+    {
+      "id": "REC-KG04",
+      "category": "space",
+      "titleVi": "Giá chiêng và Trống H'gơr thiêng",
+      "titleEn": "Sacred H'gơr Great Drum & Gong Rack Zone",
+      "indigenousName": "H'gơr & Sang Ching",
+      "elementOrType": "Không gian nhạc khí thiêng",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, Đắk Lắk",
+      "historicalLocation": "Vùng đất thần thoại Krông Búk",
+      "descriptionVi": "Trống H'gơr là trống cái khổng lồ bưng bằng da voi hoặc da trâu mộng đực, đặt trang trọng ở đầu ghế K'pan cạnh cửa sổ gian Gah. Trên vách là giá treo bộ chiêng Jhô 10 chiếc báu vật.",
+      "descriptionEn": "The H'gor ceremonial great drum stretched with bull-buffalo or wild elephant hide sits at the head of the Kpan bench beneath sacred heirloom gongs.",
+      "architecturalRole": "Không gian tâm linh phát ra âm thanh kết nối cõi trần với tổ tiên Yang.",
+      "dimensionOrMaterial": "Đường kính mặt trống 1.1m, tang gỗ liền khối dài 1.3m, da trâu rừng phơi khô.",
+      "taboosAndRules": "Không ai được gõ vào trống H'gơr trừ khi già làng hoặc chủ nhà bắt đầu nghi lễ chính thức.",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Trống thiêng H'gơr bưng bằng da voi cùng bộ cồng chiêng cổ chỉ được cất tiếng khi có nghi lễ trọng đại, khơi dậy ký ức ngàn năm của dòng họ.",
+      "audioTextEn": "The sacred Hgor great drum sounds only during monumental rites, awakening ancestral memories echoes through generations."
+    },
+    {
+      "id": "REC-KG05",
+      "category": "space",
+      "titleVi": "Bếp lửa trung tâm Nhà Rông Ba Na",
+      "titleEn": "Central Sacred Hearth of the Ba Na Rong House",
+      "indigenousName": "Tơp Pơ-lang",
+      "elementOrType": "Bếp lửa thiêng cộng đồng",
+      "culturalRegion": "Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Kon Kơ Tu, xã Đắk Rơ Wa, Kon Tum",
+      "historicalLocation": "Làng Ba Na Kon Tum cổ",
+      "descriptionVi": "Đặt ở chính giữa sàn nhà Rông, bếp lửa được đắp một lớp đất sét đỏ bazan dày 15cm trên khung gỗ chống cháy. Lửa được giữ đỏ than liên tục để sưởi ấm trong mùa đông giá buốt và xua đuổi muỗi vắt.",
+      "descriptionEn": "Positioned dead center on the elevated floor, built from a 15cm thick heat-insulating layer of basalt red clay over fire-resistant hardwood framing.",
+      "architecturalRole": "Nguồn nhiệt sưởi ấm, trung tâm quần tụ của các bô lão và thanh niên bàn việc làng thâu đêm.",
+      "dimensionOrMaterial": "Khuôn gỗ vuông 1.8m x 1.8m, đất sét mịn trộn vỏ trấu và tro bếp.",
+      "taboosAndRules": "Tuyệt đối không dẫm chân lên thành bếp, không nướng đồ tanh ôi hoặc vứt rác vào bếp thiêng.",
+      "sourceId": "SRC-06",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Bếp lửa giữa nhà Rông không bao giờ tắt tro than, là ngọn lửa sưởi ấm tâm hồn buôn làng và chứng kiến mọi lời thề danh dự của những dũng sĩ Ba Na.",
+      "audioTextEn": "The central hearth of the Rong house burns ceaselessly, warming hearts and witnessing sacred pacts of highland warriors."
+    },
+    {
+      "id": "REC-KG06",
+      "category": "space",
+      "titleVi": "Cột thiêng Gưng kơ-dơr & Nơi cất tế khí",
+      "titleEn": "Sacred Ritual Pillar (Gưng Kơ-dơr) & Altar Zone",
+      "indigenousName": "Gưng Kơ-dơr",
+      "elementOrType": "Khu vực bàn thờ và cột tế thần",
+      "culturalRegion": "Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Kon Klor, Kon Tum",
+      "historicalLocation": "Vùng Đắk Uy cổ",
+      "descriptionVi": "Nằm ở vị trí trang nghiêm nhất sát vách hồi phía Đông của nhà Rông, nơi dựng cây cột thiêng trang trí hoa văn mắt thần, buộc các xâu vỏ ốc, ngà voi và sừng sơn dương do các thợ săn cúng tạ ơn Yang.",
+      "descriptionEn": "Erected at the most revered sector along the eastern wall of the Rong house, adorned with talismanic motifs, sea shells, ivory, and chamois horns offered by hunters.",
+      "architecturalRole": "Trụ sở tinh thần tối thượng của vị thần bảo trợ buôn làng (Yang Bri, Yang Sơng).",
+      "dimensionOrMaterial": "Cột gỗ gõ đỏ chạm lộng cao 4m, dây mây rừng thắt gút phong thủy.",
+      "taboosAndRules": "Phụ nữ và trẻ em chưa làm lễ thành đinh tuyệt đối không được chạm tay vào cột thiêng.",
+      "sourceId": "SRC-01",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Cột thiêng Gưng Kơ-dơr kết nối con người với thần linh, nơi lưu giữ sừng thú và các biểu tượng chiến công bảo vệ buôn làng.",
+      "audioTextEn": "The Gung Ko-dor pillar anchors the spiritual sanctity of the village hall, preserving ancestral hunting relics and heroic war emblems."
+    },
+    {
+      "id": "REC-KG07",
+      "category": "space",
+      "titleVi": "Kho thóc trên cao (Sang ba) - Kho báu sự sống",
+      "titleEn": "Elevated Granary Barn (Sang Ba)",
+      "indigenousName": "Sang Ba",
+      "elementOrType": "Công trình phụ trợ & Kho trữ lương thực",
+      "culturalRegion": "Đắk Lắk - Đắk Nông",
+      "ethnicGroup": "M'Nông",
+      "currentLocation": "Huyện Lắk, Đắk Lắk",
+      "historicalLocation": "Vùng hồ Lắk cổ đại",
+      "descriptionVi": "Nhà kho thóc làm bằng gỗ bền chắc dựng tách rời khỏi nhà dài khoảng 20m để phòng hỏa hoạn. Các cột đỡ được ốp những tấm gỗ tròn hình khiên (chắn chuột) ngăn các loài gặm nhấm trèo lên cắn phá lúa thiêng.",
+      "descriptionEn": "An elevated barn separated 20 meters from residential quarters for fire safety, equipped with circular anti-rodent baffles hugging wooden stilts.",
+      "architecturalRole": "Bảo quản thóc lúa hạt ngọc của buôn làng qua nhiều mùa hạn hán hay giáp hạt.",
+      "dimensionOrMaterial": "Diện tích 12m2, 4 cột gỗ căm xe đẽo nhẵn, vách nứa chống ẩm tốt.",
+      "taboosAndRules": "Chỉ có bà mẹ mẫu hệ chủ gia đình mới được quyền mở cửa kho lấy thóc giã gạo.",
+      "sourceId": "SRC-04",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Kho thóc Sang Ba dựng trên cao với những tấm khiên chống chuột thông minh, thể hiện sự chu toàn của người phụ nữ mẫu hệ bảo vệ nguồn sống gia tộc.",
+      "audioTextEn": "The elevated Sang Ba granary with anti-rodent timber shields demonstrates ingenious maternal stewardship over village sustenance."
+    },
+    {
+      "id": "REC-KG08",
+      "category": "space",
+      "titleVi": "Khu sàn ngủ nam thanh niên chưa vợ tại Nhà Rông",
+      "titleEn": "Unmarried Bachelor Sleeping Floor inside Rong House",
+      "indigenousName": "Đak Mơ-no",
+      "elementOrType": "Không gian sinh hoạt rèn luyện võ nghệ",
+      "culturalRegion": "Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Xã Đắk Rơ Wa, Kon Tum",
+      "historicalLocation": "Vùng cao nguyên Kon Tum",
+      "descriptionVi": "Khu vực sàn hai bên hông nhà Rông là nơi các chàng trai Ba Na đến tuổi trưởng thành (từ 15 tuổi) ban đêm phải lên nhà Rông ngủ tập trung để bảo vệ buôn làng, nghe già làng kể sử thi và học đan lát, chơi chiêng.",
+      "descriptionEn": "The lateral flank platform where adolescent unmarried young men lodge at night to guard the village perimeter, study epics, and train in traditional warfare and crafts.",
+      "architecturalRole": "Trường học truyền khẩu và trung tâm huấn luyện quân sự tự quản của buôn làng.",
+      "dimensionOrMaterial": "Sàn tre lồ ô đập dập, chiếu nan mây đan thủ công.",
+      "taboosAndRules": "Thanh niên khi ngủ ở nhà Rông không được có hành vi thiếu nghiêm túc, không dẫn người lạ mặt vào ngủ chung.",
+      "sourceId": "SRC-06",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Sàn ngủ nam thanh niên tại nhà Rông chính là cái nôi tôi luyện nên những chàng Đam San, Xinh Nhã dũng cảm của núi rừng đại ngàn.",
+      "audioTextEn": "The bachelor lodge inside the Rong house served as an indigenous academy forging martial bravery, crafts, and epic memory."
+    },
+    {
+      "id": "REC-KG09",
+      "category": "space",
+      "titleVi": "Hệ thống bếp con từng hộ gia đình trong gian Ok",
+      "titleEn": "Private Hearth Clusters of Nuclear Units in Ok",
+      "indigenousName": "Tơp Sang Khung",
+      "elementOrType": "Bếp sinh hoạt gia đình nhỏ",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, TP. Buôn Ma Thuột",
+      "historicalLocation": "Vùng cư trú buôn Alê A",
+      "descriptionVi": "Bên trong mỗi buồng nhỏ thuộc gian Ok đều có một bếp lửa riêng để vợ chồng nấu nướng thức ăn hàng ngày, đun nước tắm cho con thơ. Khói bếp len qua mái cỏ xua đuổi muỗi rừng.",
+      "descriptionEn": "Each individual couple room within Ok houses an independent hearth for daily cooking, hot water, and smoke circulation curing timber.",
+      "architecturalRole": "Đảm bảo sự tự chủ kinh tế sinh hoạt của từng cặp vợ chồng trong cấu trúc đại gia đình.",
+      "dimensionOrMaterial": "Khay đất nén 1m x 1m, gác bếp treo 3 tầng hun khói hạt giống.",
+      "taboosAndRules": "Không dùng củi mục nhiều khói cay; vợ chồng không cãi nhau trước ngọn lửa bếp ấm.",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Những ngọn lửa bếp con trong gian Ok sưởi ấm tình cảm của từng gia đình nhỏ nhưng vẫn gắn bó keo sơn trong đại gia đình mẫu hệ Ê Đê.",
+      "audioTextEn": "Subtle private hearths within individual chambers warm nuclear families while preserving harmonious unity under the matrilineal clan."
+    },
+    {
+      "id": "REC-KG10",
+      "category": "space",
+      "titleVi": "Sân phơi hiên sau Drip kơ-pă",
+      "titleEn": "Rear Deck & Washing Veranda (Drip Kơ-pă)",
+      "indigenousName": "Drip Kơ-pă",
+      "elementOrType": "Hiên hậu sảnh và khu sinh hoạt giặt giũ",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Huyện Krông Búk, Đắk Lắk",
+      "historicalLocation": "Vùng đồi bazan Krông Năng",
+      "descriptionVi": "Sân sàn mở phía cuối nhà dài Ê Đê, kết nối với bến nước hoặc đường dẫn ra rẫy cà phê, lúa rẫy. Đây là nơi để gùi nước bầu khô mát lạnh, phơi ngô, ớt và thực hiện các công việc sơ chế nông sản.",
+      "descriptionEn": "The rear open deck opening toward forest spring paths, holding dried gourd water vessels, sun-drying red chili peppers, and washing utensils.",
+      "architecturalRole": "Lối ra vào hậu cần, cân bằng đối lưu không khí với sân hiên trước.",
+      "dimensionOrMaterial": "Sàn ván ghép thưa 15m2, lan can tre nứa bảo vệ.",
+      "taboosAndRules": "Khách đến nhà không được tự tiện đi vào lối sau; lối này dành cho thành viên gia đình vận chuyển củi và nước.",
+      "sourceId": "SRC-05",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Hiên sau Drip kơ-pă thơm mùi ngô nương phơi nắng và những quả bầu khô đựng nước suối mát lịm của các bà mẹ Tây Nguyên.",
+      "audioTextEn": "The rear deck preserves the peaceful scent of sun-cured maize and fresh spring water kept in hollowed gourds."
+    },
+    {
+      "id": "REC-NL01",
+      "category": "ritual",
+      "titleVi": "Hội đồng Già làng họp buôn tại Nhà Rông",
+      "titleEn": "Council of Elders Village Assembly at Rong House",
+      "indigenousName": "Rơ-gông Pơ-lơi",
+      "elementOrType": "Thiết chế tự quản & Luật tục cộng đồng",
+      "culturalRegion": "Bắc Tây Nguyên",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Kon Kơ Tu, TP. Kon Tum",
+      "historicalLocation": "Toàn vùng Kon Tum cổ",
+      "descriptionVi": "Cuộc họp tối cao của hội đồng già làng và đại diện các dòng họ dưới sự chủ trì của Già làng trưởng. Các quyết định về phân chia ranh giới nương rẫy, phạt vạ theo luật tục, chuẩn bị mùa rẫy mới và giải quyết hòa giải mâu thuẫn đều diễn ra quanh bếp lửa nhà Rông.",
+      "descriptionEn": "The supreme deliberative assembly of elders and clan heads presiding around the sacred hearth to adjudicate customary law, allocate agricultural lands, and maintain social harmony.",
+      "activityType": "Hội nghị quản lý cộng đồng và thực thi luật tục",
+      "context": "Ghi hình trong phiên họp hòa giải phân chia nguồn nước tưới làng vào mùa khô",
+      "isRealRitual": true,
+      "recordingDate": "2024-03-15",
+      "permissionStatus": "Đã ký biên bản cam kết đồng thuận có hiểu biết trước (FPIC) với Hội đồng Già làng",
+      "usageScope": "Nghiên cứu khoa học, số hóa bảo tồn di sản học đường, phi thương mại",
+      "unreleasedNotes": "Không công bố danh tính người vi phạm luật tục và các khoản phạt vạ nội bộ theo yêu cầu bảo vệ quyền riêng tư",
+      "informantName": "A Blang",
+      "informantAge": 76,
+      "informantRole": "Già làng uy tín kiêm Chủ tịch Hội đồng Luật tục",
+      "sourceId": "SRC-06",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Phiên họp buôn bên bếp lửa nhà Rông thể hiện tinh thần dân chủ làng cổ sơ nhưng vô cùng chặt chẽ, nơi lời phán quyết của Già làng có sức nặng thiêng liêng hơn cả thép gai.",
+      "audioTextEn": "The elder council by the hearth exemplifies ancient communal democracy where elder wisdom upholds community harmony above all."
+    },
+    {
+      "id": "REC-NL02",
+      "category": "ritual",
+      "titleVi": "Truyền dạy nghệ thuật cồng chiêng cho thế hệ trẻ",
+      "titleEn": "Oral Master Transmission of Gong Artistry to Youth",
+      "indigenousName": "Tơ-pôk Ching Chơng",
+      "elementOrType": "Di sản phi vật thể đại diện nhân loại (UNESCO)",
+      "culturalRegion": "Gia Lai",
+      "ethnicGroup": "Gia Rai",
+      "currentLocation": "Xã Ia Mơ Nông, huyện Chư Păh, Gia Lai",
+      "historicalLocation": "Vùng đồi bazan Chư Păh",
+      "descriptionVi": "Lớp học truyền khẩu không có bản nhạc viết. Nghệ nhân già làng cầm tay từng em thiếu nhi từ 8-12 tuổi, gõ từng nhịp điệu chiêng nú (Ching Mui) và chiêng bằng (Ching Kơ-nhi), dạy cách cảm thụ nhịp thở của cồng chiêng hòa quyện vào bước chân xoang.",
+      "descriptionEn": "Oral auditory apprenticeship without written notation. Elder masters guide the hands of youths aged 8-12, teaching intricate rhythmic dynamics and synced xoang choreography.",
+      "activityType": "Giáo dục di sản truyền khẩu & trao truyền thế hệ",
+      "context": "Buổi học cồng chiêng định kỳ vào tối thứ Bảy tại sân nhà rông",
+      "isRealRitual": false,
+      "recordingDate": "2024-03-12",
+      "permissionStatus": "Phụ huynh và Già làng ký biên bản đồng ý ghi hình phục vụ số hóa giáo dục",
+      "usageScope": "Truyền thông giáo dục di sản công cộng, lưu trữ bảo tàng",
+      "unreleasedNotes": "Bảo lưu một số tiết tấu bí truyền chỉ dùng trong tang ma chưa truyền cho người ngoài dòng họ",
+      "informantName": "Rơ Chăm H'Rik",
+      "informantAge": 68,
+      "informantRole": "Nghệ nhân Nhân dân nắm giữ 12 bài chiêng cổ",
+      "sourceId": "SRC-05",
+      "imageUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Tiếng chiêng ngân nga qua bàn tay những đứa trẻ Tây Nguyên hôm nay là lời khẳng định trường tồn của bản sắc văn hóa ngàn năm không bao giờ tắt.",
+      "audioTextEn": "The resonant gong beats echoing through youthful hands guarantee the enduring vitality of indigenous highland heritage."
+    },
+    {
+      "id": "REC-NL03",
+      "category": "ritual",
+      "titleVi": "Diễn xướng Kể Khan - Hát H'mon sử thi đêm buôn",
+      "titleEn": "Epic Storytelling Chanting Night (Kể Khan - H'mon)",
+      "indigenousName": "Klei Khan / H'mon",
+      "elementOrType": "Văn học truyền khẩu sử thi",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, TP. Buôn Ma Thuột",
+      "historicalLocation": "Thung lũng sông Krông Búk huyền thoại",
+      "descriptionVi": "Nghệ nhân hát kể sử thi nằm ngửa trên ghế K'pan hoặc bên đống lửa, nhắm mắt xuất thần hát kể thiên sử thi Đam San, Xinh Nhã kéo dài thâu đêm suốt sáng. Giọng điệu lúc trầm bổng tựa suối reo, lúc dồn dập như tiếng vó ngựa xung trận.",
+      "descriptionEn": "The master bard lies trance-like on the Kpan bench or beside embers, chanting sprawling verse epics of heroic chieftains Dam San and Xinh Nha through nights.",
+      "activityType": "Trình diễn nghi lễ thiêng sử thi truyền khẩu",
+      "context": "Ghi âm trực tiếp vào đêm trăng tròn tháng Hai tại gian Gah nhà dài",
+      "isRealRitual": true,
+      "recordingDate": "2024-02-24",
+      "permissionStatus": "Được nghệ nhân và Hội đồng bô lão chấp thuận lưu trữ số hóa",
+      "usageScope": "Lưu trữ nghiên cứu ngữ văn dân gian, phi thương mại",
+      "unreleasedNotes": "Phần mở đầu khấn xin tổ tiên phù hộ (lời cúng Yang) được lược bỏ không đưa vào ấn bản số hóa mở",
+      "informantName": "Y Kông Niê",
+      "informantAge": 79,
+      "informantRole": "Già làng kiêm Nghệ nhân Kể Khan danh tiếng",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Kể Khan sử thi bên bếp lửa nhà dài đưa người nghe trở về thời kỳ huyền sử hào hùng, nơi con người và thần linh cùng chung một tiếng nói.",
+      "audioTextEn": "Chanting epics beside the longhouse fire transports listeners into mythic times when mortals and deities spoke in shared cadence."
+    },
+    {
+      "id": "REC-NL04",
+      "category": "ritual",
+      "titleVi": "Lễ Mừng Lúa Mới (Ăn cơm mới - Yang Sri)",
+      "titleEn": "New Rice Harvest Thanksgiving Festival (Yang Sri)",
+      "indigenousName": "Yang Sri / Hma Kơ-pă",
+      "elementOrType": "Nghi lễ nông nghiệp tạ ơn thần linh",
+      "culturalRegion": "Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Kon Kơ Tu, Kon Tum",
+      "historicalLocation": "Vùng thung lũng sông Đăk Bla",
+      "descriptionVi": "Được tổ chức ngay sau khi thu hoạch vụ lúa rẫy đầu tiên. Cả buôn làng cùng mang gùi lúa mới và ghè rượu cần ngon nhất lên nhà Rông, Già làng thực hiện nghi thức vẩy rượu cần tạ ơn Yang Lúa đã cho mùa màng bội thu, thóc lúa đầy kho.",
+      "descriptionEn": "Celebrated right after gathering the first field harvest. Villagers bring sheaves of new fragrant rice and wine jars to the Rong house, offering thanks to the Goddess of Rice.",
+      "activityType": "Đại lễ nông nghiệp cộng đồng thường niên",
+      "context": "Ghi nhận thực tế tại lễ hội Mùa cơm mới sau vụ gặt tháng Mười một",
+      "isRealRitual": true,
+      "recordingDate": "2023-11-28",
+      "permissionStatus": "Được chính quyền xã và Ban Quản lý Làng Văn hóa du lịch cộng đồng bảo trợ",
+      "usageScope": "Tất cả mục đích giáo dục, bảo tồn và quảng bá văn hóa phi vật thể",
+      "unreleasedNotes": "Nội dung bốc quẻ xem vận hạn buôn làng trong gan gà hiến tế được bảo mật nội bộ",
+      "informantName": "A Blang",
+      "informantAge": 76,
+      "informantRole": "Chủ tế nghi lễ nông nghiệp",
+      "sourceId": "SRC-06",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Lễ mừng cơm mới chan chứa lòng tri ân đất mẹ bazan đã dâng tặng những hạt ngọc trời thơm dẻo, bảo đảm cuộc sống no đủ cho buôn làng.",
+      "audioTextEn": "The New Rice Ceremony expresses deep gratitude to mother earth for bountiful harvests sustaining highland prosperity."
+    },
+    {
+      "id": "REC-NL05",
+      "category": "ritual",
+      "titleVi": "Lễ Bỏ Mả (Pơ-thi / Tỉa thi) - Giải phóng linh hồn",
+      "titleEn": "Tomb Abandonment Ceremony (Pơ-thi) - Soul Liberation",
+      "indigenousName": "Pơ-thi / Tỉa thi",
+      "elementOrType": "Nghi lễ chu kỳ vòng đời & Điêu khắc tượng nhà mồ",
+      "culturalRegion": "Gia Lai",
+      "ethnicGroup": "Gia Rai",
+      "currentLocation": "Huyện Ia Grai, Gia Lai",
+      "historicalLocation": "Vùng rừng thiêng biên giới Việt - Lào",
+      "descriptionVi": "Là ngày hội lớn nhất, tốn kém nhất và giàu giá trị nghệ thuật nhất của người Tây Nguyên. Lễ diễn ra từ 3 đến 5 ngày tại khu nhà mồ, đánh dấu việc người sống làm tròn bổn phận cuối cùng để linh hồn người chết hóa thành tổ tiên tái sinh, vĩnh viễn chia tay cõi trần.",
+      "descriptionEn": "The most monumental ritual in the highland life cycle. Lasting 3-5 days at the tomb grove, releasing the departed soul into ancestral reincarnation and liberating living kin.",
+      "activityType": "Nghi lễ tang ma tiễn đưa tối thượng",
+      "context": "Khảo sát thực địa tại cụm nhà mồ làng M'nớt",
+      "isRealRitual": true,
+      "recordingDate": "2024-01-18",
+      "permissionStatus": "Gia đình tang chủ và Già làng cho phép nhóm nghiên cứu ghi chép dưới sự giám sát",
+      "usageScope": "Nghiên cứu nhân học tôn giáo, bài giảng số hóa di sản",
+      "unreleasedNotes": "Nghi thức thì thầm lời trăn trối cuối cùng bên mộ huyệt không được phép thu âm",
+      "informantName": "Ksor Nhuân",
+      "informantAge": 71,
+      "informantRole": "Nghệ nhân đẽo tượng nhà mồ kiêm người điều hành lễ",
+      "sourceId": "SRC-01",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Lễ Bỏ Mả không mang màu sắc bi lụy mà là khúc hoan ca giải phóng linh hồn, nơi tượng nhà mồ gỗ mộc lưu giữ triết lý nhân sinh sâu sắc của người Gia Rai.",
+      "audioTextEn": "The Pothi ceremony is a triumphant liberation of the spirit rather than mourning, celebrating the eternal cycle of life."
+    },
+    {
+      "id": "REC-NL06",
+      "category": "ritual",
+      "titleVi": "Lễ Cúng Bến Nước (Dranh Ea) - Tạ ơn Thần Nguồn",
+      "titleEn": "Water Source Blessing Rite (Dranh Ea)",
+      "indigenousName": "Dranh Ea / Mnhum Kpu",
+      "elementOrType": "Nghi lễ sinh thái bảo vệ môi trường nguồn nước",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Kram, xã Ea Tiêu, Cư Kuin, Đắk Lắk",
+      "historicalLocation": "Đầu nguồn suối Ea Tam cổ",
+      "descriptionVi": "Nghi lễ được chủ bến nước (Pô Pin Ea) tổ chức định kỳ đầu mùa mưa để dọn sạch máng tre dẫn nước, cúng gà và heo tạ ơn Thần Nước (Yang Ea), cầu cho dòng suối buôn làng luôn trong vắt không cạn đáy.",
+      "descriptionEn": "Annual ecological ceremony hosted by the hereditary Master of the Water Source (Po Pin Ea), purifying bamboo aqueducts and petitioning the Water Deity for unpolluted springs.",
+      "activityType": "Nghi lễ bảo vệ nguồn sống & cân bằng sinh thái",
+      "context": "Tái hiện đầy đủ và ghi nhận thực tế tại bến nước Ea Kram",
+      "isRealRitual": true,
+      "recordingDate": "2024-03-05",
+      "permissionStatus": "Ban đại diện cộng đồng buôn đồng thuận ghi hình toàn cảnh",
+      "usageScope": "Giáo dục bảo vệ tài nguyên nước và phát triển bền vững",
+      "unreleasedNotes": "Công thức thảo dược thả vào đầu nguồn để khử khuẩn nước suối không công bố ra ngoài buôn",
+      "informantName": "H'Ngọc Niê",
+      "informantAge": 64,
+      "informantRole": "Chủ nhân thừa kế danh hiệu Chủ bến nước đời thứ 4",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Lễ cúng bến nước nhắc nhở mỗi thành viên buôn làng phải nâng niu từng giọt nước suối rừng, bảo vệ rừng đầu nguồn như bảo vệ chính sinh mệnh mình.",
+      "audioTextEn": "The Water Source Rite binds the community to cherish every drop of forest spring water, preserving sacred watersheds."
+    },
+    {
+      "id": "REC-NL07",
+      "category": "ritual",
+      "titleVi": "Lễ Thổi Tai (Pơ-soong kơ-tui) cho trẻ sơ sinh",
+      "titleEn": "Ear-Blowing Soul Naming Rite (Pơ-soong Kơ-tui) for Newborns",
+      "indigenousName": "Pơ-soong Kơ-tui",
+      "elementOrType": "Nghi lễ chu kỳ đời người đầu tiên",
+      "culturalRegion": "Bắc Tây Nguyên",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Làng Kon Kơ Tu, Kon Tum",
+      "historicalLocation": "Vùng Đắk Rơ Wa cổ",
+      "descriptionVi": "Khi em bé tròn một tháng tuổi, thầy cúng và già làng đến bên bếp lửa thực hiện nghi lễ thổi nhẹ vào vành tai đứa trẻ, gọi tên bản địa chính thức và cầu chúc đứa trẻ có đôi tai biết lắng nghe điều hay lẽ phải của buôn làng.",
+      "descriptionEn": "When an infant turns one month, the priest blows softly into the child's ear, bestowing their ancestral name and blessing them with receptive wisdom.",
+      "activityType": "Nghi lễ đón nhận thành viên mới vào buôn làng",
+      "context": "Thực hiện tại gia đình anh A Thảo, ghi hình với sự cho phép của mẹ cháu bé",
+      "isRealRitual": true,
+      "recordingDate": "2024-02-19",
+      "permissionStatus": "Biên bản đồng thuận gia đình và đại diện Hội phụ nữ buôn",
+      "usageScope": "Bảo tàng số học đường, phi thương mại",
+      "unreleasedNotes": "Tên húy tâm linh kiêng gọi tránh tà ma không đưa lên hệ thống công khai",
+      "informantName": "Y Ble",
+      "informantAge": 72,
+      "informantRole": "Bà mụ truyền thống kiêm nghệ nhân dân gian",
+      "sourceId": "SRC-06",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Hơi thở đầu đời thổi vào tai là lời chúc phúc của buôn làng, trao cho đứa bé đôi tai tinh thông để phân biệt lẽ phải trái trên đường đời.",
+      "audioTextEn": "The newborn ear-blowing rite welcomes a new soul into the clan, granting them discerning ears to embrace village wisdom."
+    },
+    {
+      "id": "REC-NL08",
+      "category": "ritual",
+      "titleVi": "Lễ Cúng Thần Rừng Yang Bri xin dựng cột Nhà Rông",
+      "titleEn": "Forest Deity (Yang Bri) Tree-Felling Permission Ceremony",
+      "indigenousName": "Mnhum Yang Bri",
+      "elementOrType": "Nghi lễ lâm sinh & Khởi công kiến trúc",
+      "culturalRegion": "Kon Tum",
+      "ethnicGroup": "Xơ Đăng",
+      "currentLocation": "Huyện Đắk Tô, Kon Tum",
+      "historicalLocation": "Rừng già nguyên sinh sườn đèo Măng Đen",
+      "descriptionVi": "Trước khi đốn ngã những cây Cà Chít cổ thụ làm cột cái Jơng rông, đội thợ làng dưới sự dẫn đầu của Già làng phải mang ché rượu cần và gà trống vào sâu trong rừng già để khấn xin Thần Rừng cho phép đốn gỗ.",
+      "descriptionEn": "Prior to harvesting sacred timber for the Rong pillars, builders led by elders offer wine and white roosters deep within ancient woods, petitioning forest spirits.",
+      "activityType": "Nghi lễ khởi nguyên kiến trúc truyền thống",
+      "context": "Tư liệu phỏng vấn hồi cố và nghi thức tái hiện bảo tồn di sản",
+      "isRealRitual": false,
+      "recordingDate": "2023-12-10",
+      "permissionStatus": "Được Ban Quản lý Di tích Lịch sử Đắk Tô phê duyệt kịch bản khoa học",
+      "usageScope": "Nghiên cứu số hóa bảo tồn kiến trúc cổ truyền",
+      "unreleasedNotes": "Vị trí chính xác của khu rừng thiêng cấm khai thác được giữ kín theo hương ước bảo vệ rừng tự nhiên",
+      "informantName": "A Dũng",
+      "informantAge": 69,
+      "informantRole": "Thợ cả dựng nhà Rông Xơ Đăng",
+      "sourceId": "SRC-01",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Lễ cúng Thần Rừng thể hiện thái độ tôn kính tuyệt đối trước tự nhiên, chỉ xin đẵn cây khi thật sự cần thiết và luôn trồng bù những mầm xanh mới.",
+      "audioTextEn": "The Forest Deity ceremony embodies profound reverence for nature, taking timber only with permission and nurturing young saplings."
+    },
+    {
+      "id": "REC-NL09",
+      "category": "ritual",
+      "titleVi": "Lễ Cúng Sức Khỏe cho Chủ Gia Đình Mẫu Hệ",
+      "titleEn": "Longevity & Vitality Blessing Rite for Matriarch",
+      "indigenousName": "Mnhum Cúng Hơ-găt",
+      "elementOrType": "Nghi lễ gia đình gia tộc mẫu hệ",
+      "culturalRegion": "Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "currentLocation": "Buôn Akô Dhông, TP. Buôn Ma Thuột",
+      "historicalLocation": "Khu vực Buôn Ma Thuột cổ",
+      "descriptionVi": "Được các con gái và con rể tổ chức tại gian Gah để cầu chúc người mẹ mẫu hệ sống lâu, minh mẫn. Gia đình mổ heo, buộc sợi chỉ đồng hộ mệnh vào cổ tay người mẹ và trao chuỗi cườm đá gia bảo biểu thị sự tiếp nối sinh lực dòng họ.",
+      "descriptionEn": "Hosted by daughters and sons-in-law in the Gah hall to bless the family matriarch with longevity. A sacred copper amulet thread is tied around her wrist.",
+      "activityType": "Nghi lễ tạ ơn và tôn vinh phụ nữ mẫu hệ",
+      "context": "Tổ chức nhân dịp mừng thọ 75 tuổi của cụ bà H'Lâm Niê",
+      "isRealRitual": true,
+      "recordingDate": "2024-03-01",
+      "permissionStatus": "Gia đình dòng họ Niê Kdăm đồng thuận ký văn bản cho phép công bố khoa học",
+      "usageScope": "Trưng bày số hóa bảo tàng, đào tạo đại học văn hóa dân tộc",
+      "unreleasedNotes": "Gia phả chi tiết 7 đời dòng họ mẫu hệ không công bố toàn văn",
+      "informantName": "H'Lâm Niê",
+      "informantAge": 75,
+      "informantRole": "Trưởng tộc họ Niê Kdăm",
+      "sourceId": "SRC-07",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Sợi chỉ đồng buộc vào cổ tay người mẹ là lời chúc trường thọ của con cháu, giữ cho ngọn lửa yêu thương trong nhà dài luôn rực sáng.",
+      "audioTextEn": "The sacred copper thread tied around the matriarch's wrist invokes enduring vitality for the guardian of the hearth."
+    },
+    {
+      "id": "REC-NL10",
+      "category": "ritual",
+      "titleVi": "Lễ Đâm Trâu tạ ơn Thần Linh (Ăn trâu - Koh Kpo)",
+      "titleEn": "Buffalo Thanksgiving Sacrifice & Feasting Festival (Koh Kpo)",
+      "indigenousName": "Koh Kpo / Tơ-pôk Kpo",
+      "elementOrType": "Đại lễ hiến tế cộng đồng lớn nhất",
+      "culturalRegion": "Tây Nguyên toàn vùng",
+      "ethnicGroup": "Ba Na",
+      "currentLocation": "Xã Đắk Rơ Wa, Kon Tum",
+      "historicalLocation": "Vùng trũng sông Đăk Bla",
+      "descriptionVi": "Lễ hội lớn nhất được tổ chức khi khánh thành nhà Rông mới hoặc mừng chiến thắng dẹp loạn. Con trâu hiến tế được buộc vào cây nêu Gưng thiêng chạm khắc tinh xảo. Suốt ba ngày đêm, tiếng chiêng và vũ điệu xoang không ngớt quay quanh cột nêu trước khi chia thịt đều cho mọi mái nhà.",
+      "descriptionEn": "The supreme thanksgiving festival held upon completing a new Rong house. The sacrificial buffalo is tied to the elaborately carved ritual mast (Gung), accompanied by continuous gong symphonies and xoang circles.",
+      "activityType": "Lễ hội hiến sinh và gắn kết cộng đồng",
+      "context": "Hồ sơ khoa học ghi nhận lễ khánh thành phục dựng nhà Rông Kon Kơ Tu",
+      "isRealRitual": true,
+      "recordingDate": "2021-12-15",
+      "permissionStatus": "Hồ sơ kiểm kê của Sở VHTTDL tỉnh Kon Tum",
+      "usageScope": "Hồ sơ di sản văn hóa quốc gia, tư liệu học thuật",
+      "unreleasedNotes": "Quy trình giết mổ hiến tế thực hiện theo nghi thức cổ, hiện nay đã chuyển đổi văn minh hóa theo hướng tượng trưng",
+      "informantName": "A Blang",
+      "informantAge": 76,
+      "informantRole": "Chủ tế lễ hội đâm trâu buôn làng",
+      "sourceId": "SRC-01",
+      "imageUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+      "audioTextVi": "Cây nêu vút cao giữa sân nhà Rông cùng tiếng cồng chiêng rộn rã gắn kết muôn tấm lòng buôn làng trong ngày đại lễ tạ ơn Yang tối cao.",
+      "audioTextEn": "The soaring ritual mast in the Rong courtyard unifies the community in gratitude to supreme ancestral guardians."
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-01",
+      "nameVi": "Cục Di sản Văn hóa - Hồ sơ Di sản Văn hóa Phi vật thể Quốc gia",
+      "nameEn": "Department of Cultural Heritage - National Intangible Cultural Heritage Dossier",
+      "organizationVi": "Bộ Văn hóa, Thể thao và Du lịch Việt Nam",
+      "organizationEn": "Ministry of Culture, Sports and Tourism of Vietnam",
+      "type": "Văn bản quy phạm & Hồ sơ khoa học quốc gia",
+      "year": 2021,
+      "reliability": 5,
+      "descriptionVi": "Hồ sơ pháp lý và tư liệu chuẩn quốc gia về kiến trúc nhà Rông các dân tộc Ba Na, Xơ Đăng và Không gian văn hóa Cồng chiêng Tây Nguyên.",
+      "descriptionEn": "Official legal documents and national scientific research dossiers on communal Rong house architecture and Central Highlands cultural space.",
+      "citationNotice": "Trích dẫn theo quyết định công nhận và tài liệu khoa học lưu trữ tại Cục Di sản Văn hóa.",
+      "officialUrl": "https://dsvh.gov.vn",
+      "categoryGroup": "institutional",
+      "sheetCode": "HS-QG/DSVH-2021/TN"
+    },
+    {
+      "id": "SRC-02",
+      "nameVi": "Bảo tàng Dân tộc học Việt Nam - Bộ sưu tập Kiến trúc Dân gian Ngoài trời",
+      "nameEn": "Vietnam Museum of Ethnology - Outdoor Folk Architecture Collection",
+      "organizationVi": "Bảo tàng Dân tộc học Việt Nam (Hà Nội)",
+      "organizationEn": "Vietnam Museum of Ethnology (Hanoi)",
+      "type": "Bản vẽ kỹ thuật, đo đạc thực tế & Hiện vật bảo tàng",
+      "year": 2018,
+      "reliability": 5,
+      "descriptionVi": "Bộ hồ sơ đo vẽ phục dựng nhà Rông Ba Na (Kon Tum) và nhà Dài Ê Đê (Đắk Lắk) theo tỷ lệ 1:1 ngoài trời, lưu giữ thông số cấu kiện gỗ và kỹ thuật chằng buộc mây tre.",
+      "descriptionEn": "Full 1:1 scale architectural drawings, timber joinery specifications, and rattan binding techniques of Ba Na Rong house and Ede Longhouse.",
+      "citationNotice": "Tư liệu đo vẽ lưu trữ tại Phòng Trưng bày & Lưu trữ Bảo tàng Dân tộc học Việt Nam.",
+      "officialUrl": "https://vme.org.vn",
+      "categoryGroup": "institutional",
+      "sheetCode": "BV-BTH/KT-2018/1:1"
+    },
+    {
+      "id": "SRC-03",
+      "nameVi": "Viện Văn hóa Nghệ thuật Quốc gia Việt Nam (VICAS)",
+      "nameEn": "Vietnam National Institute of Culture and Arts Studies (VICAS)",
+      "organizationVi": "Viện Văn hóa Nghệ thuật Quốc gia Việt Nam",
+      "organizationEn": "Vietnam National Institute of Culture and Arts Studies",
+      "type": "Đề tài nghiên cứu khoa học cấp Nhà nước",
+      "year": 2020,
+      "reliability": 5,
+      "descriptionVi": "Công trình nghiên cứu toàn diện: \"Biến đổi không gian cư trú và thiết chế văn hóa buôn làng Tây Nguyên trong bối cảnh hiện đại hóa\".",
+      "descriptionEn": "Comprehensive scientific monograph on the transformation of living spaces and community institutions in the Central Highlands.",
+      "citationNotice": "Mã số đề tài VICAS-TN-2020/09, Chủ nhiệm: PGS.TS. Nguyễn Thị Thu Trang.",
+      "officialUrl": "https://vicas.org.vn",
+      "categoryGroup": "institutional",
+      "sheetCode": "NC-VICAS/TN-2020/09"
+    },
+    {
+      "id": "SRC-04",
+      "nameVi": "Bộ Văn hóa, Thể thao và Du lịch & Sở VHTTDL Đắk Lắk - Kon Tum",
+      "nameEn": "Ministry of Culture, Sports & Tourism and Provincial Departments",
+      "organizationVi": "Bộ Văn hóa, Thể thao và Du lịch (Cổng TTĐT) & Sở VHTTDL địa phương",
+      "organizationEn": "Ministry of Culture, Sports and Tourism (Portal) & Local Culture Depts",
+      "type": "Báo cáo kiểm kê thực địa cấp tỉnh & Cổng thông tin Bộ",
+      "year": 2022,
+      "reliability": 5,
+      "descriptionVi": "Số liệu kiểm kê hiện trạng số lượng nhà rông truyền thống tại các huyện Đắk Hà, Sa Thầy, Kon Rẫy và nhà dài mẫu hệ tại TP. Buôn Ma Thuột, huyện Cư M'gar.",
+      "descriptionEn": "Field inventory on the preservation status of traditional Rong houses and matriarchal longhouses across districts.",
+      "citationNotice": "Báo cáo số 142/BC-SVHTTDL về hiện trạng thiết chế văn hóa cơ sở vùng đồng bào DTTS.",
+      "officialUrl": "https://bvhttdl.gov.vn",
+      "categoryGroup": "institutional",
+      "sheetCode": "KK-BVHTTDL/BC-142"
+    },
+    {
+      "id": "SRC-05",
+      "nameVi": "Phiếu khảo sát thực địa kiến trúc dân gian F03",
+      "nameEn": "Field Survey Architectural Questionnaire F03",
+      "organizationVi": "Nhóm nghiên cứu F03 - Nguyễn Văn Hoàng (PH64335)",
+      "organizationEn": "Research Team F03 - Nguyen Van Hoang (PH64335)",
+      "type": "Khảo sát thực địa, ảnh chụp độ phân giải cao & Đo vẽ kỹ thuật",
+      "year": 2024,
+      "reliability": 5,
+      "descriptionVi": "Khảo sát trực tiếp tại làng Kon Kơ Tu (Kon Tum), buôn Akô Dhông (Đắk Lắk), buôn Jun (hồ Lắk), đo đạc chi tiết nhịp cột, độ dốc mái và ghi chép cấu trúc khung gỗ.",
+      "descriptionEn": "Direct fieldwork at Kon Ko Tu village, Ako Dhong hamlet, and Jun hamlet: column spans, roof pitches, structural wood photography.",
+      "citationNotice": "Hồ sơ khảo sát thực địa Đồ án số hóa di sản F03 - Lưu trữ nhóm nghiên cứu.",
+      "officialUrl": "https://dsvh.gov.vn",
+      "categoryGroup": "field",
+      "sheetCode": "PTT-F03/KT-01"
+    },
+    {
+      "id": "SRC-06",
+      "nameVi": "Phiếu phỏng vấn sâu Nghệ nhân Ưu tú A Lăng Blang (Ba Na)",
+      "nameEn": "In-depth Interview Record: Meritorious Artisan A Lang Blang (Ba Na)",
+      "organizationVi": "Làng Kon Kơ Tu, xã Đắk Rơ Wa, TP. Kon Tum",
+      "organizationEn": "Kon Ko Tu Village, Dak Ro Wa Commune, Kon Tum City",
+      "type": "Lời kể nhân chứng & Nghệ nhân chế tác kiến trúc truyền thống",
+      "year": 2024,
+      "reliability": 5,
+      "descriptionVi": "Bản ghi âm 120 phút về kỹ thuật tìm gỗ Cà Chít dựng cột Jơng rông, kỹ thuật bện mây rơm mái vòm hình lưỡi búa và quy tắc ứng xử của nam thanh niên trong nhà Rông.",
+      "descriptionEn": "120-minute audio interview on sacred timber selection, axe-blade roof weaving, and customary youth etiquette inside the Rong house.",
+      "citationNotice": "Biên bản phỏng vấn số PV-01/F03 thực hiện ngày 14/03/2024 tại làng Kon Kơ Tu.",
+      "officialUrl": "https://vicas.org.vn",
+      "categoryGroup": "field",
+      "sheetCode": "PV-F03/NN-BLANG"
+    },
+    {
+      "id": "SRC-07",
+      "nameVi": "Phiếu phỏng vấn Già làng Y Kông Niê (Dân tộc Ê Đê)",
+      "nameEn": "Elder Interview Record: Village Elder Y Kong Nie (E De)",
+      "organizationVi": "Buôn Akô Dhông, phường Tân Lợi, TP. Buôn Ma Thuột",
+      "organizationEn": "Ako Dhong Hamlet, Tan Loi Ward, Buon Ma Thuot City",
+      "type": "Lời kể nhân chứng, Trưởng buôn truyền thống & Nghệ nhân kể Khan",
+      "year": 2024,
+      "reliability": 5,
+      "descriptionVi": "Phỏng vấn sâu về chế độ mẫu hệ, biểu tượng bầu ngực mẹ trên cầu thang K'pan, nghi thức tiếp khách quý tại gian Gah và sự nối dài của căn nhà khi con gái lấy chồng.",
+      "descriptionEn": "In-depth interview on matrilineal social structure, maternal breast motifs on stairs, guest reception etiquette at Gah space.",
+      "citationNotice": "Biên bản phỏng vấn số PV-02/F03 thực hiện ngày 18/03/2024 tại buôn Akô Dhông.",
+      "officialUrl": "https://vme.org.vn",
+      "categoryGroup": "field",
+      "sheetCode": "PV-F03/GL-YKONG"
+    }
+  ],
+  "floorPlanAreas": [
+    {
+      "id": "FP-ND-01",
+      "buildingType": "nha_dai",
+      "nameVi": "Sân hiên trước (Drip)",
+      "nameEn": "Front Entrance Veranda (Drip)",
+      "indigenousName": "Drip Sang",
+      "x": 10,
+      "y": 50,
+      "dimensions": "6.0m x 4.5m",
+      "functionsVi": "Sân đón khách lộ thiên, nơi rửa chân, cởi dép và để lại nông cụ, dao rựa trước khi bước vào gian khách.",
+      "functionsEn": "Open front greeting deck, foot washing, leaving farm implements before stepping inside.",
+      "customsVi": "Chủ nhà tiếp nước lá thơm cho khách tại bậc thềm hiên.",
+      "customsEn": "Hosts offer herbal infused water to guests at the threshold.",
+      "rulesVi": "Khách phải cởi mũ nón, lau sạch bùn đất trước khi bước qua bậu cửa.",
+      "rulesEn": "Visitors must take off headgear and wipe shoes before the threshold.",
+      "taboosVi": "Cấm mang vật sắc nhọn chĩa mũi vào cửa chính; cấm đứng chặn ngay chính giữa cửa.",
+      "taboosEn": "Strictly forbidden to point bladed weapons toward the doorway.",
+      "sourceId": "SRC-07",
+      "recordId": "REC-KT09",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-ND-02",
+      "buildingType": "nha_dai",
+      "nameVi": "Cầu thang Cái (Kpan Tangga)",
+      "nameEn": "Sacred Female Ladder (Kpan Tangga)",
+      "indigenousName": "Tangga Ngă",
+      "x": 14,
+      "y": 35,
+      "dimensions": "Thân gỗ tròn 0.65m x 4.8m",
+      "functionsVi": "Lối lên nhà chính diện dành riêng cho phụ nữ trong gia tộc và khách quý, người lớn tuổi.",
+      "functionsEn": "Primary access route reserved for matrilineal women and honored elder guests.",
+      "customsVi": "Khắc đôi bầu ngực mẹ và vầng trăng khuyết biểu tượng của mẫu hệ.",
+      "customsEn": "Carved with maternal breasts and crescent moon celebrating matrilineal lineage.",
+      "rulesVi": "Bước lên bằng chân phải trước, ánh mắt hướng trang nghiêm về phía gian khách.",
+      "rulesEn": "Ascend starting with the right foot, maintaining respectful gaze forward.",
+      "taboosVi": "Nam giới trẻ tuổi trong buôn không được tùy tiện leo thang này khi không có sự cho phép.",
+      "taboosEn": "Unpermitted young males are forbidden from casually using this ladder.",
+      "sourceId": "SRC-07",
+      "recordId": "REC-KT03",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-ND-03",
+      "buildingType": "nha_dai",
+      "nameVi": "Gian khách & Sinh hoạt chung (Gah)",
+      "nameEn": "Great Communal Reception Hall (Gah)",
+      "indigenousName": "Gah",
+      "x": 28,
+      "y": 50,
+      "dimensions": "6.0m x 22.0m",
+      "functionsVi": "Không gian mở chiếm nửa trước ngôi nhà, nơi tiếp khách, mở tiệc rượu cần, hòa tấu cồng chiêng và tổ chức các nghi lễ lớn của gia tộc.",
+      "functionsEn": "Spacious open hall occupying front half: receiving guests, wine banquets, gong symphonies.",
+      "customsVi": "Khách quý ngồi phía vách Tây cạnh ghế K'pan; chủ nhà và phụ nữ ngồi đối diện phía vách Đông.",
+      "customsEn": "Honored guests recline by the western wall next to Kpan; female clan hosts sit opposite.",
+      "rulesVi": "Khi uống rượu cần, người lớn tuổi và khách quý được mời cần rượu đầu tiên.",
+      "rulesEn": "Elders and distinguished guests are offered the sacred first drinking pipe.",
+      "taboosVi": "Cấm cãi vã, to tiếng hoặc nói lời xúc phạm thần linh trong gian Gah.",
+      "taboosEn": "Arguments, shouting, or disrespectful speech are severely taboo.",
+      "sourceId": "SRC-07",
+      "recordId": "REC-KG01",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-ND-04",
+      "buildingType": "nha_dai",
+      "nameVi": "Ghế dài danh dự K'pan & Trống H'gơr",
+      "nameEn": "Honorary Monolithic K'pan Bench & Great Drum",
+      "indigenousName": "K'pan & H'gơr",
+      "x": 28,
+      "y": 25,
+      "dimensions": "Dài 16m x rộng 0.5m x dày 10cm",
+      "functionsVi": "Băng ghế độc mộc dành cho các nghệ nhân cao niên ngồi tấu cồng chiêng trong ngày hội lớn.",
+      "functionsEn": "Monolithic log bench where master musicians sit while performing gong ensembles.",
+      "customsVi": "Kê dọc sát vách Tây, đầu ghế đặt trống thiêng H'gơr da voi.",
+      "customsEn": "Stretches along the western wall with the great drum Hgor at its head.",
+      "rulesVi": "Chỉ nghệ nhân hoặc người được già làng chỉ định mới được ngồi trên K'pan khi có hội.",
+      "rulesEn": "Only designated musicians or elders may take seats on Kpan during festivities.",
+      "taboosVi": "Cấm phụ nữ ngồi lên ghế K'pan; cấm giẫm chân hoặc nằm gác chân lên ghế.",
+      "taboosEn": "Strictly taboo for females to sit on Kpan; stepping or reclining feet on it is forbidden.",
+      "sourceId": "SRC-02",
+      "recordId": "REC-KG03",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-ND-05",
+      "buildingType": "nha_dai",
+      "nameVi": "Bếp lửa tiếp khách gian Gah",
+      "nameEn": "Gah Reception Hearth",
+      "indigenousName": "Tơp Gah",
+      "x": 32,
+      "y": 65,
+      "dimensions": "1.5m x 1.5m đắp đất bazan",
+      "functionsVi": "Sưởi ấm cho khách trong đêm lạnh cao nguyên, đun nước pha trà và giữ tàn than ấm cúng.",
+      "functionsEn": "Warming guests during highland cold nights, boiling herbal tea, sustaining ember warmth.",
+      "customsVi": "Khách đến nhà được mời ngồi quây quần quanh bếp để uống ghè rượu đầu tiên.",
+      "customsEn": "Guests gather around the hearth to share the inaugural welcoming wine jar.",
+      "rulesVi": "Thêm củi bằng đầu nhỏ trước, không chẻ củi trong nhà.",
+      "rulesEn": "Feed firewood smaller ends first; never split wood indoors.",
+      "taboosVi": "Tuyệt đối không nhổ nước bọt, không nướng thức ăn có mùi tanh vào bếp khách.",
+      "taboosEn": "Never spit or roast pungent decaying meat over this guest hearth.",
+      "sourceId": "SRC-03",
+      "recordId": "REC-KG01",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-ND-06",
+      "buildingType": "nha_dai",
+      "nameVi": "Gian ngăn Ok & Buồng ngủ con gái cả",
+      "nameEn": "Ok Partition & Eldest Daughter Chamber",
+      "indigenousName": "Ôk Sang Amí",
+      "x": 52,
+      "y": 40,
+      "dimensions": "3.5m x 4.0m",
+      "functionsVi": "Buồng ngủ riêng của vợ chồng con gái cả và bà mẹ chủ nhà mẫu hệ.",
+      "functionsEn": "Private master bedroom of the eldest daughter, her husband, and family matriarch.",
+      "customsVi": "Đặt sát ngay sau vách ngăn gian Gah để dễ quán xuyến việc nhà.",
+      "customsEn": "Positioned immediately adjoining the Gah partition for domestic oversight.",
+      "rulesVi": "Chỉ các thành viên nữ trong dòng họ mới được tự do ra vào.",
+      "rulesEn": "Only female kin of the clan are entitled to freely enter.",
+      "taboosVi": "Đàn ông không cùng huyết thống tuyệt đối không được bước vào hoặc nhòm qua vách.",
+      "taboosEn": "Unrelated men are strictly forbidden from stepping in or peering through walls.",
+      "sourceId": "SRC-03",
+      "recordId": "REC-KG02",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-ND-07",
+      "buildingType": "nha_dai",
+      "nameVi": "Dãy buồng ngủ các con gái thứ (Ok Adhei)",
+      "nameEn": "Younger Daughters Partitioned Chambers (Ok Adhei)",
+      "indigenousName": "Ôk Adhei",
+      "x": 68,
+      "y": 40,
+      "dimensions": "Dãy buồng mỗi ô 3.0m x 3.5m",
+      "functionsVi": "Các gian buồng riêng nối tiếp nhau cho các con gái thứ khi lập gia đình và đón rể về nhà.",
+      "functionsEn": "Sequential individual rooms for younger daughters marrying into the clan.",
+      "customsVi": "Mỗi lần có con gái lấy chồng, nhà dài lại nối thêm một gian về phía sau.",
+      "customsEn": "The house is physically extended backward with each newly wed daughter.",
+      "rulesVi": "Các chàng rể cư xử khiêm nhường, kính trọng đại gia đình bên vợ.",
+      "rulesEn": "Sons-in-law maintain humble and respectful comportment toward matrilineal elders.",
+      "taboosVi": "Cấm xâm phạm gian phòng của chị em bạn dâu/rể.",
+      "taboosEn": "Strictly prohibited to intrude into sibling couples private rooms.",
+      "sourceId": "SRC-07",
+      "recordId": "REC-KG02",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-ND-08",
+      "buildingType": "nha_dai",
+      "nameVi": "Kho thóc & Hiên sau (Sang Ba & Drip kơ-pă)",
+      "nameEn": "Granary Barn & Rear Service Porch (Drip Kơ-pă)",
+      "indigenousName": "Sang Ba & Drip Kơ-pă",
+      "x": 88,
+      "y": 50,
+      "dimensions": "5.0m x 4.0m",
+      "functionsVi": "Kho chứa lương thực hạt giống, nơi giặt giũ, để gùi bầu nước và lối đi ra rẫy.",
+      "functionsEn": "Granary storage, washing quarters, gourd water rack, and farm trail exit.",
+      "customsVi": "Bà mẹ mẫu hệ nắm giữ chìa khóa và quản lý xuất nhập lương thực.",
+      "customsEn": "The matriarch holds supreme custody over food supplies and seed inventory.",
+      "rulesVi": "Gùi nước lấy từ bến suối về phải được súc rửa sạch trước khi đưa lên hiên.",
+      "rulesEn": "Spring water gourds must be rinsed clean before mounting the rear deck.",
+      "taboosVi": "Không được dẫm đạp lên hạt thóc vương vãi trên sàn; phải nhặt gom cẩn thận.",
+      "taboosEn": "Never step upon scattered rice grains; every sacred seed must be gathered.",
+      "sourceId": "SRC-04",
+      "recordId": "REC-KG07",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-NR-01",
+      "buildingType": "nha_rong",
+      "nameVi": "Cầu thang đón & Sàn hiên Đrông",
+      "nameEn": "Welcome Staircase & Porch Platform (Đrông)",
+      "indigenousName": "Tangga & Đrông Rông",
+      "x": 12,
+      "y": 50,
+      "dimensions": "Sàn hiên 4.0m x 5.0m, thang 9 bậc",
+      "functionsVi": "Lối tiếp cận duy nhất dẫn lên sàn nhà Rông cách mặt đất 2.5m, nơi nghỉ ngơi trước khi vào sảnh.",
+      "functionsEn": "Sole access staircase leading 2.5m above ground onto the welcoming timber porch.",
+      "customsVi": "Thang đẽo từ thân gỗ lớn, đầu thang khắc hình vầng trăng hoặc sừng trâu.",
+      "customsEn": "Carved from single log, capped with buffalo horn or crescent symbols.",
+      "rulesVi": "Người bước lên thang phải rũ sạch đất cát trên gót chân.",
+      "rulesEn": "Visitors must wipe dust and mud from heels before entering.",
+      "taboosVi": "Phụ nữ không được tự ý bước lên nhà Rông khi đang có kinh nguyệt hoặc chưa tẩy trần.",
+      "taboosEn": "Strict taboos apply for unpurified individuals entering the sacred hall.",
+      "sourceId": "SRC-06",
+      "recordId": "REC-KT01",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-NR-02",
+      "buildingType": "nha_rong",
+      "nameVi": "Cột cái Jơng Rông - Trụ cột thiêng",
+      "nameEn": "Main Structural & Sacred Columns (Jơng Rông)",
+      "indigenousName": "Jơng Rông",
+      "x": 35,
+      "y": 30,
+      "dimensions": "Hệ 8 cột đường kính 0.7m, cao 12m",
+      "functionsVi": "Trụ chịu lực chính nâng đỡ toàn bộ hệ dầm sàn và mái vòm khổng lồ nặng hàng chục tấn.",
+      "functionsEn": "Heavyweight timber columns supporting colossal floor girders and roof rafters.",
+      "customsVi": "Cột được chọn từ cây Cà Chít thẳng tắp trong rừng thiêng có cúng xin thần Rừng.",
+      "customsEn": "Selected from sacred forest ironwood trees blessed by rites to Yang Bri.",
+      "rulesVi": "Bảo dưỡng và chằng mây định kỳ mỗi mùa khô.",
+      "rulesEn": "Inspected and rebound with fresh rattan lashings each dry season.",
+      "taboosVi": "Tuyệt đối cấm đục lỗ, đóng đinh sắt hoặc vẽ bậy lên thân cột cái.",
+      "taboosEn": "Strictly forbidden to drive iron nails, bore holes, or deface sacred columns.",
+      "sourceId": "SRC-06",
+      "recordId": "REC-KT02",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-NR-03",
+      "buildingType": "nha_rong",
+      "nameVi": "Bếp lửa thiêng trung tâm (Tơp Pơ-lang)",
+      "nameEn": "Central Sacred Community Hearth",
+      "indigenousName": "Tơp Pơ-lang",
+      "x": 50,
+      "y": 50,
+      "dimensions": "Khung vuông 2.0m x 2.0m đất bazan",
+      "functionsVi": "Trọng tâm sinh hoạt làng, nơi già làng hội đàm, thanh niên quây quần nghe sử thi và giữ ấm mùa lạnh.",
+      "functionsEn": "Village focal point where elders convene, youth listen to epics, and embers warm the hall.",
+      "customsVi": "Than hồng được ủ liên tục quanh năm, biểu trưng cho ngọn lửa sinh mệnh buôn làng.",
+      "customsEn": "Embers are perpetually kept alive, signifying continuous community life.",
+      "rulesVi": "Chỉ củi khô rừng già mới được dùng nhóm lửa; già làng là người châm lửa đầu tiên trong lễ.",
+      "rulesEn": "Only clean hardwood is burned; the elder lights the ceremonial first flame.",
+      "taboosVi": "Cấm dẫm chân lên gờ bếp; cấm hơ chân hoặc vứt rác tanh vào bếp thiêng.",
+      "taboosEn": "Never step upon the hearth rim, roast raw foul meats, or throw debris into embers.",
+      "sourceId": "SRC-06",
+      "recordId": "REC-KG05",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-NR-04",
+      "buildingType": "nha_rong",
+      "nameVi": "Cột thiêng Gưng Kơ-dơr & Tế khí",
+      "nameEn": "Sacred Altar Pillar & Trophy Mast (Gưng Kơ-dơr)",
+      "indigenousName": "Gưng Kơ-dơr",
+      "x": 75,
+      "y": 35,
+      "dimensions": "Cột gỗ gõ cao 4.5m chạm nổi hoa văn",
+      "functionsVi": "Nơi cư ngụ của thần linh bảo trợ, nơi treo sừng trâu hiến tế, sừng nai săn bắn và gươm giáo thiêng.",
+      "functionsEn": "Sanctuary of guardian deities, displaying sacrificial horns and heroic blades.",
+      "customsVi": "Tổ chức các nghi lễ cúng thần Yang Bri, Yang Sơng trước mỗi chuyến săn hay mùa vụ mới.",
+      "customsEn": "Ceremonial petitions to Yang deities before hunts and seasonal agricultural sowing.",
+      "rulesVi": "Chỉ các bô lão và dũng sĩ có chiến công mới được thực hiện nghi thức tại đây.",
+      "rulesEn": "Only decorated elders and revered village champions may officiate rites here.",
+      "taboosVi": "Phụ nữ và trẻ nhỏ chưa thành niên tuyệt đối không được sờ vào tế khí.",
+      "taboosEn": "Females and uninitiated children must never touch sacred altar relics.",
+      "sourceId": "SRC-01",
+      "recordId": "REC-KG06",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "FP-NR-05",
+      "buildingType": "nha_rong",
+      "nameVi": "Khu sàn ngủ nam thanh niên & Đan lát (Đak Mơ-no)",
+      "nameEn": "Bachelor Living Platform & Craft Quarters",
+      "indigenousName": "Đak Mơ-no",
+      "x": 50,
+      "y": 75,
+      "dimensions": "Sàn tre nứa dài 14m x rộng 2.5m",
+      "functionsVi": "Nơi các chàng trai chưa vợ ngủ đêm để bảo vệ làng, học đánh chiêng, đan gùi và rèn luyện võ nghệ.",
+      "functionsEn": "Platform where unmarried youth lodge to guard the village and learn crafts and gong music.",
+      "customsVi": "Các bô lão truyền dạy kinh nghiệm săn bắn, nhận biết đường rừng và các điệu múa truyền thống.",
+      "customsEn": "Elders impart forest tracking skills, customary lore, and traditional warfare dances.",
+      "rulesVi": "Giữ trật tự nghiêm túc sau khi tiếng chiêng báo hiệu giờ giới nghiêm của làng điểm điểm.",
+      "rulesEn": "Strict silence and discipline observed after the night curfew gong.",
+      "taboosVi": "Cấm mang rượu vào uống say gây gổ; cấm đưa phụ nữ lên khu vực ngủ của thanh niên.",
+      "taboosEn": "Intoxication brawls and bringing females onto bachelor platforms are severely penalized.",
+      "sourceId": "SRC-06",
+      "recordId": "REC-KG08",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "locations": [
+    {
+      "id": "LOC-KT01",
+      "nameVi": "Làng Kon Kơ Tu & Nhà Rông Ba Na cổ",
+      "nameEn": "Kon Ko Tu Village & Ancient Ba Na Rong House",
+      "province": "Kon Tum",
+      "lat": 14.3315,
+      "lng": 108.0432,
+      "ethnicGroup": "Ba Na",
+      "heritageType": "Kiến trúc Nhà Rông & Di sản Cồng chiêng",
+      "descriptionVi": "Ngôi làng cổ nhất của người Ba Na ven bờ sông Đăk Bla thơ mộng, lưu giữ nhà Rông bằng gỗ cà chít cao 15m với mái hình lưỡi búa vút cao nguyên bản.",
+      "descriptionEn": "The oldest Ba Na village along the Dak Bla river, preserving an authentic 15m high ironwood Rong house with traditional thatched roof.",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "recordRef": "REC-KT01"
+    },
+    {
+      "id": "LOC-KT02",
+      "nameVi": "Nhà Rông Kon Klor - Biểu tượng Bắc Tây Nguyên",
+      "nameEn": "Kon Klor Rong House - North Highland Icon",
+      "province": "Kon Tum",
+      "lat": 14.3512,
+      "lng": 108.0267,
+      "ethnicGroup": "Ba Na",
+      "heritageType": "Nhà Rông văn hóa cộng đồng",
+      "descriptionVi": "Nhà rông lớn nhất Kon Tum, dài 17m, rộng 6m và mái cao tới 22m, nằm cạnh cầu treo Kon Klor soi bóng bên sông Đăk Bla.",
+      "descriptionEn": "The grandest communal hall in Kon Tum: 17m long, 6m wide, and 22m soaring roof towering beside the historic Kon Klor suspension bridge.",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "recordRef": "REC-KT08"
+    },
+    {
+      "id": "LOC-GL01",
+      "nameVi": "Làng Đê Ktu & Quần thể Kiến trúc Gia Rai Arap",
+      "nameEn": "De Ktu Village & Gia Rai Arap Architecture",
+      "province": "Gia Lai",
+      "lat": 14.0042,
+      "lng": 108.2115,
+      "ethnicGroup": "Gia Rai",
+      "heritageType": "Kiến trúc Nhà Rông & Tượng Nhà mồ Pơ-thi",
+      "descriptionVi": "Nằm tại huyện Mang Yang, bảo lưu hoàn hảo nhà rông truyền thống với vách nứa đan hoa văn quả trám cùng khu tượng nhà mồ Pơ-thi kỳ vĩ.",
+      "descriptionEn": "Preserving customary Gia Rai architecture with rhombus-patterned wicker walls and evocative Pothi funerary sculptures.",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "recordRef": "REC-KT05"
+    },
+    {
+      "id": "LOC-DL01",
+      "nameVi": "Buôn Akô Dhông - Thủ phủ Nhà Dài mẫu hệ Ê Đê",
+      "nameEn": "Ako Dhong Hamlet - Capital of E De Matrilineal Longhouses",
+      "province": "Đắk Lắk",
+      "lat": 12.7011,
+      "lng": 108.0489,
+      "ethnicGroup": "Ê Đê",
+      "heritageType": "Quần thể Nhà Dài truyền thống & Cầu thang K'pan",
+      "descriptionVi": "Được mệnh danh là buôn làng đẹp nhất Buôn Ma Thuột với hơn 30 ngôi nhà dài cổ hàng chục mét, rợp bóng cây xanh và tiếng suối Ea Kram róc rách.",
+      "descriptionEn": "Known as the most pristine hamlet in Buon Ma Thuot with over 30 traditional longhouses, lush gardens, and living matrilineal customs.",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "recordRef": "REC-KT03"
+    },
+    {
+      "id": "LOC-DL02",
+      "nameVi": "Buôn Jun & Không gian cư trú ven hồ Lắk",
+      "nameEn": "Jun Village & Matriarchal Living Space by Lake Lak",
+      "province": "Đắk Lắk",
+      "lat": 12.4289,
+      "lng": 108.1756,
+      "ethnicGroup": "M'Nông",
+      "heritageType": "Nhà Dài M'Nông & Nghề gốm cổ truyền",
+      "descriptionVi": "Quần thể nhà sàn dài của người M'Nông Rlâm soi bóng xuống mặt nước mênh mông của hồ Lắk nguyên sơ, nơi thuần dưỡng voi rừng và gìn giữ kho lúa Sang ba.",
+      "descriptionEn": "Traditional M'Nong Rlam longhouses reflected in pristine Lake Lak, known for elephant stewardship and elevated grain barns.",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "recordRef": "REC-KG07"
+    },
+    {
+      "id": "LOC-DN01",
+      "nameVi": "Bon R'lơm - Đắk Song & Không gian Sử thi M'Nông",
+      "nameEn": "Bon R'lom - Dak Song & M'Nong Epic Territory",
+      "province": "Đắk Nông",
+      "lat": 12.1833,
+      "lng": 107.6167,
+      "ethnicGroup": "M'Nông",
+      "heritageType": "Nhà Dài truyền thống & Hát kể sử thi Ot Ndrong",
+      "descriptionVi": "Cái nôi của bộ sử thi Ot Ndrong đồ sộ với hàng chục vạn câu thơ, lưu giữ không gian sinh hoạt quanh bếp lửa thiêng của đồng bào M'Nông Preh.",
+      "descriptionEn": "Birthplace of monumental Ot Ndrong oral epics, preserving communal fireside storytelling traditions in Dak Nong plateau.",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "recordRef": "REC-NL03"
+    },
+    {
+      "id": "LOC-LD01",
+      "nameVi": "Làng Đưng K'nớ - Dưới chân núi Mẹ Lang Biang",
+      "nameEn": "Dung K'no Hamlet - Beneath Mother Mount Lang Biang",
+      "province": "Lâm Đồng",
+      "lat": 12.0833,
+      "lng": 108.4333,
+      "ethnicGroup": "K'Ho",
+      "heritageType": "Kiến trúc nhà sàn K'Ho Chil & Đội cồng chiêng sơn cước",
+      "descriptionVi": "Không gian cư trú truyền thống của người K'Ho dưới tán thông ngàn, nơi tiếng chiêng ngân hòa vào điệu hát Tam Pớt trong những đêm sương lạnh.",
+      "descriptionEn": "Traditional K'Ho mountain dwellings under pine canopies, where gongs harmonize with lyrical Tam Pot chants during foggy highland nights.",
+      "imageUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+      "recordRef": "REC-NL02"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "Thời tiền sử - Thế kỷ XVIII",
+      "periodVi": "Khởi nguyên Kiến trúc Nhà sàn Cao nguyên",
+      "periodEn": "Origins of Highland Stilt Architecture",
+      "titleVi": "Sự hình thành Nhà Rông và Nhà Dài thích ứng khí hậu rừng nhiệt đới",
+      "titleEn": "Evolution of Rong and Longhouse Shelters in Tropical Highlands",
+      "descriptionVi": "Cư dân các tộc người ngữ hệ Môn-Khmer và Nam Đảo sáng tạo nên kiểu thức nhà sàn cột cao bằng gỗ rừng và mái tranh dốc để phòng tránh thú dữ, thích ứng với mùa mưa kéo dài và đất bazan dốc đứng.",
+      "descriptionEn": "Mon-Khmer and Austronesian highland communities perfected high-stilt timber architecture with steep thatch roofs to evade wild beasts and withstand torrential monsoons.",
+      "historicalSignificanceVi": "Xác lập thiết chế Nhà Rông là trung tâm quyền lực cộng đồng và Nhà Dài là tế bào tổ chức xã hội mẫu hệ vững chắc.",
+      "historicalSignificanceEn": "Established the Rong house as the civic axis and the Longhouse as the matrilineal social foundation.",
+      "sourceId": "SRC-02"
+    },
+    {
+      "year": "Thế kỷ XIX - Đầu thế kỷ XX (1880 - 1945)",
+      "periodVi": "Ghi chép Thám hiểm & Khảo sát Nhân học Cổ điển",
+      "periodEn": "Colonial Exploration & Classical Anthropological Records",
+      "titleVi": "Những khảo sát đầu tiên của Henri Maitre, Jacques Dournes và Viện Viễn Đông Bác Cổ",
+      "titleEn": "Pioneering Field Surveys by Henri Maitre and EFEO Scholars",
+      "descriptionVi": "Các nhà nhân học Pháp ghi chép chi tiết về kích thước những ngôi nhà dài Ê Đê dài trên 100m tại Đắk Lắk và những nhà Rông Ba Na cao trên 20m vút thẳng lên mây tại Kon Tum.",
+      "descriptionEn": "French ethnographers recorded 100-meter-long E De family longhouses and 20-meter-tall Ba Na Rong houses soaring in Kon Tum.",
+      "historicalSignificanceVi": "Cung cấp hệ thống bản vẽ mặt cắt, ảnh tư liệu đen trắng quý giá về tỷ lệ kiến trúc nguyên thủy.",
+      "historicalSignificanceEn": "Supplied historic architectural drawings, elevation blueprints, and vintage monochrome plates.",
+      "sourceId": "SRC-01"
+    },
+    {
+      "year": "1945 - 1975",
+      "periodVi": "Thời kỳ Biến động Chiến tranh & Kháng chiến",
+      "periodEn": "Wartime Transformation & Resistance Years",
+      "titleVi": "Nhà Rông - Căn cứ cách mạng và sự tàn phá của bom đạn",
+      "titleEn": "The Rong House as Revolutionary Stronghold & Wartime Impacts",
+      "descriptionVi": "Nhà Rông trở thành trạm tiền tiêu, kho vũ khí và nơi hội họp chỉ huy của các đơn vị vũ trang cách mạng. Nhiều buôn làng bị dồn vào ấp chiến lược, kiến trúc truyền thống chịu tổn thất nặng nề.",
+      "descriptionEn": "Rong houses served as outposts, armories, and assembly grounds for resistance fighters, while village resettlements caused severe losses to timber structures.",
+      "historicalSignificanceVi": "Khắc sâu biểu tượng Nhà Rông gắn liền với tinh thần quật khởi của Anh hùng Núp và các dân tộc Tây Nguyên.",
+      "historicalSignificanceEn": "Immortalized the Rong house as an emblem of heroism alongside legendary figures like Hero Nup.",
+      "sourceId": "SRC-03"
+    },
+    {
+      "year": "2005",
+      "periodVi": "Vinh danh Di sản Văn hóa Thế giới",
+      "periodEn": "World Heritage Inscription Milestone",
+      "titleVi": "UNESCO công nhận Không gian văn hóa Cồng chiêng Tây Nguyên là Kiệt tác nhân loại",
+      "titleEn": "UNESCO Inscribes Cultural Space of Gong Culture on World Heritage List",
+      "descriptionVi": "Sự kiện mang tính bước ngoặt khẳng định cồng chiêng không thể tách rời khỏi không gian thiêng của Nhà Rông và Nhà Dài. Nhà Rông là nơi thẩm âm hoàn hảo nhất cho các bộ chiêng cổ.",
+      "descriptionEn": "Milestone recognition establishing that gong resonance is indivisible from the acoustic sanctuary of Rong and Longhouse structures.",
+      "historicalSignificanceVi": "Tạo động lực quốc tế thúc đẩy các chương trình trùng tu, phục dựng kiến trúc dân gian Tây Nguyên.",
+      "historicalSignificanceEn": "Catalyzed nationwide restoration initiatives revitalizing vernacular wooden structures.",
+      "sourceId": "SRC-01"
+    },
+    {
+      "year": "2010 - 2020",
+      "periodVi": "Kiểm kê Quốc gia & Nỗ lực Bảo tồn Bền vững",
+      "periodEn": "National Inventory & Sustainable Stewardship",
+      "titleVi": "Chương trình mục tiêu phục hồi Nhà Rông truyền thống và khôi phục buôn làng cổ",
+      "titleEn": "Targeted State Programs Restoring Traditional Halls & Ancient Hamlets",
+      "descriptionVi": "Sở VHTTDL các tỉnh Tây Nguyên thực hiện kiểm kê, cấp kinh phí hỗ trợ đồng bào mua tranh nứa và tìm gỗ hợp pháp để dựng lại nhà rông tại 100% làng đồng bào Ba Na, Xơ Đăng, Gia Rai.",
+      "descriptionEn": "Provincial inventories provided material support for sustainably sourced timber and cogon thatch to re-erect traditional halls in ethnic villages.",
+      "historicalSignificanceVi": "Ngăn chặn nguy cơ \"bê tông hóa\" mái nhà Rông, bảo lưu tri thức thợ mộc dân gian bản địa.",
+      "historicalSignificanceEn": "Halted concrete substitutes, upholding master vernacular carpentry and rattan joinery lore.",
+      "sourceId": "SRC-04"
+    },
+    {
+      "year": "2024 - 2026",
+      "periodVi": "Kỷ nguyên Số hóa Di sản 3D & AI Knowledge Base",
+      "periodEn": "Digital Heritage 3D & AI Knowledge Base Era",
+      "titleVi": "Đề tài F03: Số hóa toàn diện dữ liệu kiến trúc, không gian và nghi lễ bằng công nghệ AI RAG",
+      "titleEn": "Project F03: Comprehensive Digitization with Interactive Web & AI RAG Knowledge System",
+      "descriptionVi": "Đồ án của tác giả Nguyễn Văn Hoàng (PH64335) - Nhóm 2 ứng dụng công nghệ số hóa hiện đại: Sơ đồ mặt bằng tương tác, bản đồ GIS, Audio Guide và trợ lý AI Gemini RAG trích dẫn tư liệu chuẩn xác.",
+      "descriptionEn": "Project F03 led by Nguyen Van Hoang pioneers modern heritage digitization: interactive floor plans, GIS geospatial layers, synthesized audio guide, and Gemini AI RAG cited retrieval.",
+      "historicalSignificanceVi": "Mở rộng tiếp cận di sản Tây Nguyên đến công chúng toàn cầu, lưu trữ vĩnh cửu dữ liệu văn hóa trên không gian số.",
+      "historicalSignificanceEn": "Opens immersive access worldwide while safeguarding priceless cultural memory permanently in cyberspace.",
+      "sourceId": "SRC-05"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "GAL-01",
+      "titleVi": "Mái nhà Rông Kon Klor sừng sững bên sông Đăk Bla",
+      "titleEn": "Towering Roof of Kon Klor Rong by Dak Bla River",
+      "category": "rong",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "TP. Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "photographerOrSource": "Tư liệu khảo sát F03 (2024)"
+    },
+    {
+      "id": "GAL-02",
+      "titleVi": "Cầu thang Cái chạm khắc đôi bầu ngực mẹ linh thiêng",
+      "titleEn": "Sacred Maternal Breast Carvings on Longhouse Ladder",
+      "category": "dai",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "Buôn Akô Dhông, Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "photographerOrSource": "Bảo tàng Đắk Lắk"
+    },
+    {
+      "id": "GAL-03",
+      "titleVi": "Đội nghệ nhân tấu cồng chiêng bên bếp lửa nhà Rông",
+      "titleEn": "Master Gong Ensemble Performing beside Rong Hearth",
+      "category": "gong",
+      "imageUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "Làng Kon Kơ Tu, Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "photographerOrSource": "Nghệ nhân A Blang cung cấp"
+    },
+    {
+      "id": "GAL-04",
+      "titleVi": "Nếp nhà dài êm đềm trong buôn Akô Dhông Buôn Ma Thuột",
+      "titleEn": "Serene Traditional Longhouse in Ako Dhong Hamlet",
+      "category": "dai",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "TP. Buôn Ma Thuột",
+      "ethnicGroup": "Ê Đê",
+      "photographerOrSource": "Tư liệu khảo sát F03"
+    },
+    {
+      "id": "GAL-05",
+      "titleVi": "Đại lễ Cúng Bến Nước đầu mùa mưa",
+      "titleEn": "Grand Water Source Blessing Rite at Onset of Rains",
+      "category": "ritual",
+      "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "Buôn Kram, Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "photographerOrSource": "Hồ sơ kiểm kê SVHTTDL"
+    },
+    {
+      "id": "GAL-06",
+      "titleVi": "Vũ điệu Xoang của các thiếu nữ Ba Na quanh cây nêu",
+      "titleEn": "Graceful Xoang Dance Circling the Ritual Mast",
+      "category": "ritual",
+      "imageUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "Xã Đắk Rơ Wa, Kon Tum",
+      "ethnicGroup": "Ba Na",
+      "photographerOrSource": "Viện VICAS (2020)"
+    },
+    {
+      "id": "GAL-07",
+      "titleVi": "Khu tượng nhà mồ Pơ-thi độc mộc giàu tính triết học",
+      "titleEn": "Evocative Monolithic Pothi Funerary Statues",
+      "category": "ritual",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "Huyện Ia Grai, Gia Lai",
+      "ethnicGroup": "Gia Rai",
+      "photographerOrSource": "Bảo tàng Dân tộc học VN"
+    },
+    {
+      "id": "GAL-08",
+      "titleVi": "Gian Gah trang nghiêm với ghế K'pan dài tít tắp",
+      "titleEn": "Noble Gah Chamber with Continuous Kpan Bench",
+      "category": "dai",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "Buôn Akô Dhông, Đắk Lắk",
+      "ethnicGroup": "Ê Đê",
+      "photographerOrSource": "Tư liệu khảo sát F03"
+    },
+    {
+      "id": "GAL-09",
+      "titleVi": "Đan lát và bện lạt mây thủ công dựng nhà",
+      "titleEn": "Master Rattan Crafting for Traditional Construction",
+      "category": "rong",
+      "imageUrl": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "locationVi": "Làng Đê Ktu, Gia Lai",
+      "ethnicGroup": "Gia Rai",
+      "photographerOrSource": "Tư liệu nhóm nghiên cứu F03"
+    }
+  ]
+};
+
+    // State
+    let currentTab = 'home';
+    let isDarkMode = true;
+
+    function toggleDarkMode() {
+      isDarkMode = !isDarkMode;
+      document.documentElement.classList.toggle('dark', isDarkMode);
+      document.getElementById('theme-icon').textContent = isDarkMode ? '🌙' : '☀️';
+    }
+
+    function switchTab(tabId) {
+      currentTab = tabId;
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.dataset.tab === tabId) {
+          btn.classList.add('bg-[#C88A3D]', 'text-stone-950', 'font-bold');
+          btn.classList.remove('text-stone-700', 'dark:text-stone-300');
+        } else {
+          btn.classList.remove('bg-[#C88A3D]', 'text-stone-950', 'font-bold');
+          btn.classList.add('text-stone-700', 'dark:text-stone-300');
+        }
+      });
+      renderCurrentTab();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderCurrentTab() {
+      const container = document.getElementById('app-content');
+      if (currentTab === 'home') {
+        container.innerHTML = renderHomeHtml();
+      } else if (currentTab === 'architecture') {
+        container.innerHTML = renderCategoryHtml('architecture', 'Kiến trúc & Cấu kiện gỗ dân gian');
+      } else if (currentTab === 'floorplan') {
+        container.innerHTML = renderFloorPlanHtml();
+      } else if (currentTab === 'rituals') {
+        container.innerHTML = renderCategoryHtml('ritual', 'Sinh hoạt & Nghi lễ cộng đồng');
+      } else if (currentTab === 'map') {
+        container.innerHTML = renderMapHtml();
+      } else if (currentTab === 'sources') {
+        container.innerHTML = renderSourcesHtml();
+      }
+    }
+
+    function renderHomeHtml() {
+      const p = window.disanData.projectInfo;
+      return `
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#2D2424] text-white">
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80'); filter: brightness(0.35);"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2D2424] via-transparent to-[#2D2424]/60"></div>
+          
+          <div class="relative z-10 max-w-6xl mx-auto px-4 py-16 text-center space-y-6">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-[#C88A3D] text-stone-950 font-bold text-xs uppercase tracking-wider">${p.projectCode}</span>
+            <h1 
+              class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-stone-100 max-w-5xl mx-auto drop-shadow-xl text-balance [word-break:keep-all] [overflow-wrap:normal]"
+              style="word-break: keep-all; overflow-wrap: normal; line-height: 1.22;"
+            >
+              <span class="inline-block whitespace-nowrap">Nhà Rông,</span>
+              <span class="inline-block whitespace-nowrap">Nhà Dài</span>
+              <span class="inline-block whitespace-nowrap">và Không gian</span>
+              <span class="inline-block whitespace-nowrap">cư trú cộng đồng</span>
+            </h1>
+            <p class="font-serif italic text-base sm:text-xl text-[#E0A96D]">Không gian cư trú cộng đồng 5 tỉnh Tây Nguyên (Kon Tum, Gia Lai, Đắk Lắk, Đắk Nông, Lâm Đồng)</p>
+            
+            <div class="p-4 sm:p-5 rounded-2xl bg-stone-900/80 backdrop-blur-md border border-[#8B5E34]/50 max-w-xl mx-auto text-left text-xs sm:text-sm space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-stone-400">Tác giả:</span>
+                <span class="font-bold text-white">${p.author}</span>
+                <span class="px-2 py-0.5 rounded bg-stone-800 text-[#E0A96D] font-mono">MSSV: ${p.studentId}</span>
+                <span class="px-2 py-0.5 rounded bg-stone-800 text-stone-300">${p.group}</span>
+              </div>
+              <p class="text-stone-300 pt-1">Đồ án số hóa di sản kiến trúc gỗ và không gian văn hóa cồng chiêng. Tích hợp sơ đồ mặt bằng tương tác, bản đồ địa hình 5 tỉnh và Trợ lý AI Gemini RAG.</p>
+            </div>
+
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+              <button onclick="switchTab('architecture')" class="px-6 py-3.5 rounded-xl bg-[#C88A3D] text-stone-950 font-bold text-sm hover:bg-[#E0A96D] transition shadow-lg">Khám phá dữ liệu 30+ bản ghi</button>
+              <button onclick="switchTab('map')" class="px-6 py-3.5 rounded-xl bg-stone-800/90 text-stone-200 border border-stone-600 font-semibold text-sm hover:bg-stone-700 transition">Bản đồ 5 tỉnh Tây Nguyên</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Portals -->
+        <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div onclick="switchTab('architecture')" class="cursor-pointer p-6 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-[#C88A3D] transition shadow-sm hover:shadow-xl">
+            <div class="text-[#C88A3D] font-bold text-xs uppercase tracking-wider">10 Bản ghi cấu kiện</div>
+            <h3 class="font-serif font-bold text-xl mt-1 text-stone-900 dark:text-stone-100">Kiến trúc gỗ & Cấu kiện</h3>
+            <p class="mt-2 text-xs text-stone-600 dark:text-stone-400">Mái nhà rông vút cao hình lưỡi búa, cột cái Jơng rông, mộng đan lạt mây, cầu thang Cái mẫu hệ.</p>
+          </div>
+          <div onclick="switchTab('floorplan')" class="cursor-pointer p-6 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-[#C88A3D] transition shadow-sm hover:shadow-xl">
+            <div class="text-[#C88A3D] font-bold text-xs uppercase tracking-wider">Mặt bằng tương tác</div>
+            <h3 class="font-serif font-bold text-xl mt-1 text-stone-900 dark:text-stone-100">Sơ đồ Nhà Rông & Nhà Dài</h3>
+            <p class="mt-2 text-xs text-stone-600 dark:text-stone-400">Điểm hotspot nhấp nháy, kiểm tra các phân khu chức năng gian Gah, gian Ok, bếp thiêng.</p>
+          </div>
+          <div onclick="switchTab('rituals')" class="cursor-pointer p-6 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-[#C88A3D] transition shadow-sm hover:shadow-xl">
+            <div class="text-[#C88A3D] font-bold text-xs uppercase tracking-wider">10 Bản ghi nghi lễ</div>
+            <h3 class="font-serif font-bold text-xl mt-1 text-stone-900 dark:text-stone-100">Sinh hoạt & Nghi lễ buôn làng</h3>
+            <p class="mt-2 text-xs text-stone-600 dark:text-stone-400">Họp buôn luật tục, truyền dạy chiêng xoang, hát kể Khan sử thi, lễ cúng bến nước và bỏ mả Pơ-thi.</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderCategoryHtml(category, categoryTitle) {
+      const records = window.disanData.records.filter(r => category === 'all' || r.category === category);
+      return `
+        <div class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-xs font-mono font-bold text-[#C88A3D] uppercase tracking-widest">KHO DỮ LIỆU SỐ HÓA F03</span>
+            <h2 class="text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 mt-1">${categoryTitle}</h2>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-2">Dữ liệu thực địa chuẩn xác, có hình ảnh thật và trích dẫn mã phiếu Record ID & Source ID.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${records.map(r => `
+              <div onclick="openDetailModal('${r.id}')" class="cursor-pointer rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 overflow-hidden shadow hover:shadow-xl transition group">
+                <div class="relative h-48 bg-stone-950 overflow-hidden">
+                  <img src="${r.imageUrl}" alt="${r.titleVi}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'">
+                  <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-black/30"></div>
+                  <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-stone-900/80 text-[#E0A96D] text-xs font-mono font-bold">${r.id}</span>
+                  <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#C88A3D] text-stone-950 text-xs font-bold">${r.ethnicGroup}</span>
+                  <div class="absolute bottom-3 left-3 right-3">
+                    <span class="text-[10px] text-[#E0A96D] block">${r.indigenousName}</span>
+                    <h3 class="font-serif font-bold text-white text-base truncate">${r.titleVi}</h3>
+                  </div>
+                </div>
+                <div class="p-4 space-y-2 text-xs">
+                  <p class="text-stone-600 dark:text-stone-300 line-clamp-2">${r.descriptionVi}</p>
+                  <div class="pt-2 border-t border-stone-100 dark:border-stone-800 flex justify-between text-stone-400">
+                    <span>Nguồn: ${r.sourceId}</span>
+                    <span class="text-[#C88A3D] font-bold">Xem chi tiết →</span>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderMapHtml() {
+      const locations = window.disanData.locations;
+      return `
+        <div class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <span class="text-xs font-mono font-bold text-[#C88A3D] uppercase tracking-widest">BẢN ĐỒ VECTOR 5 TỈNH TÂY NGUYÊN</span>
+            <h2 class="text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 mt-1">Hành trình Kết nối Di sản Không gian Cư trú</h2>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-2">Bản đồ độc lập 100% không dùng Tile Map ngoài: Tra cứu nhanh tọa độ GPS, độ cao và điểm khảo sát thực địa F03.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Left: Topographic SVG Map -->
+            <div class="lg:col-span-5 rounded-3xl bg-[#1C1817] border border-stone-800 p-6 shadow-2xl relative">
+              <div class="flex items-center justify-between pb-3 border-b border-stone-800 mb-4 text-xs font-serif font-bold text-stone-200">
+                <span>Trục 5 Tỉnh: Kon Tum • Gia Lai • Đắk Lắk • Đắk Nông • Lâm Đồng</span>
+                <span class="text-[#E0A96D]">14°N - 11°N</span>
+              </div>
+              <svg viewBox="0 0 450 510" class="w-full aspect-[4/5] max-h-[480px]">
+                <!-- Province Polygons -->
+                <path d="M 175 40 L 310 45 L 350 115 L 285 150 L 185 125 Z" fill="#C88A3D" stroke="#E0A96D" stroke-width="2"/>
+                <text x="245" y="90" fill="#1C1817" font-weight="bold" font-size="12" text-anchor="middle">Kon Tum</text>
+
+                <path d="M 185 128 L 285 153 L 355 118 L 385 195 L 305 242 L 165 192 Z" fill="#8B5E34" stroke="#C88A3D" stroke-width="1.5"/>
+                <text x="265" y="180" fill="#E0A96D" font-weight="bold" font-size="12" text-anchor="middle">Gia Lai</text>
+
+                <path d="M 165 196 L 305 246 L 375 272 L 315 360 L 195 332 L 145 252 Z" fill="#E0A96D" stroke="#8B5E34" stroke-width="1.5"/>
+                <text x="255" y="280" fill="#1C1817" font-weight="bold" font-size="12" text-anchor="middle">Đắk Lắk</text>
+
+                <path d="M 125 262 L 195 336 L 175 432 L 85 382 L 95 302 Z" fill="#A47551" stroke="#8B5E34" stroke-width="1.5"/>
+                <text x="140" y="350" fill="#E0A96D" font-weight="bold" font-size="12" text-anchor="middle">Đắk Nông</text>
+
+                <path d="M 200 336 L 315 365 L 345 450 L 235 480 L 180 436 Z" fill="#6B4423" stroke="#C88A3D" stroke-width="1.5"/>
+                <text x="260" y="415" fill="#E0A96D" font-weight="bold" font-size="12" text-anchor="middle">Lâm Đồng</text>
+
+                <!-- Connecting Route Line -->
+                <path d="M 250 80 Q 260 130 260 175 Q 265 230 245 285 Q 185 320 145 355 Q 190 390 260 420" fill="none" stroke="#E0A96D" stroke-width="3" stroke-dasharray="6,4"/>
+              </svg>
+            </div>
+
+            <!-- Right: Survey Sites List -->
+            <div class="lg:col-span-7 space-y-4">
+              <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">7 Điểm Khảo sát Thực địa Tiêu biểu</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${locations.map(loc => `
+                  <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+                    <div class="flex items-center justify-between text-xs">
+                      <span class="font-bold text-[#C88A3D]">${loc.province} • ${loc.ethnicGroup}</span>
+                      <span class="font-mono text-stone-400">${loc.lat.toFixed(2)}°N, ${loc.lng.toFixed(2)}°E</span>
+                    </div>
+                    <h4 class="font-serif font-bold text-stone-900 dark:text-stone-100">${loc.nameVi}</h4>
+                    <p class="text-xs text-stone-600 dark:text-stone-400 line-clamp-2">${loc.descriptionVi}</p>
+                    <div class="pt-2 text-xs">
+                      <span class="text-stone-400">Phiếu hồ sơ: </span>
+                      <span class="font-mono font-bold text-[#C88A3D]">${loc.recordRef}</span>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSourcesHtml() {
+      const sources = window.disanData.sources;
+      const groupA = sources.filter(s => s.categoryGroup === 'A');
+      const groupB = sources.filter(s => s.categoryGroup === 'B');
+
+      return `
+        <div class="max-w-7xl mx-auto px-4 py-12 space-y-10">
+          <div class="text-center max-w-3xl mx-auto">
+            <span class="text-xs font-mono font-bold text-[#C88A3D] uppercase tracking-widest">MINH BẠCH HỌC THUẬT & PHÁP LÝ</span>
+            <h2 class="text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 mt-1">Danh mục Nguồn Tư liệu Khảo sát & Hồ sơ Chính thống</h2>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-2">Toàn bộ liên kết đều trỏ thẳng tới các cổng thông tin văn hóa chính thức của Nhà nước.</p>
+          </div>
+
+          <!-- Group A: Tự thu thập F03 -->
+          <div class="space-y-4">
+            <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Nhóm A: Tư liệu Thực địa & Điền dã Trực tiếp (Đề tài F03)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${groupA.map(s => `
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+                  <div class="flex items-center justify-between text-xs font-mono">
+                    <span class="px-2 py-0.5 rounded bg-amber-500/10 text-[#C88A3D] font-bold">${s.id}</span>
+                    <span class="text-stone-400">${s.year} • ${s.collectorOrAuthor}</span>
+                  </div>
+                  <h4 class="font-serif font-bold text-stone-900 dark:text-stone-100">${s.nameVi}</h4>
+                  <p class="text-xs text-stone-600 dark:text-stone-400">${s.reliabilityNotes}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Group B: Cơ quan Nhà nước chính thống -->
+          <div class="space-y-4">
+            <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Nhóm B: Lưu trữ Quốc gia & Viện Nghiên cứu Chính thống</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${groupB.map(s => `
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-3">
+                  <div class="flex items-center justify-between text-xs font-mono">
+                    <span class="px-2 py-0.5 rounded bg-amber-500/10 text-[#C88A3D] font-bold">${s.id}</span>
+                    <span class="text-stone-400">${s.sheetCode || ''}</span>
+                  </div>
+                  <h4 class="font-serif font-bold text-stone-900 dark:text-stone-100">${s.nameVi}</h4>
+                  <p class="text-xs text-stone-600 dark:text-stone-400">${s.reliabilityNotes}</p>
+                  ${s.officialUrl ? `
+                    <div class="pt-2">
+                      <a href="${s.officialUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-[#C88A3D] hover:text-stone-950 text-xs font-semibold text-[#8B5E34] dark:text-[#E0A96D] transition">
+                        <span>Cổng thông tin: ${s.officialUrl}</span>
+                        <span>↗</span>
+                      </a>
+                    </div>
+                  ` : ''}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderFloorPlanHtml() {
+      const areas = window.disanData.floorPlanAreas;
+      return `
+        <div class="max-w-7xl mx-auto px-4 py-12 space-y-8">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-xs font-mono font-bold text-[#C88A3D] uppercase tracking-widest">SƠ ĐỒ KHÔNG GIAN BẢN ĐỊA</span>
+            <h2 class="text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 mt-1">Mặt bằng Tương tác Nhà Rông & Nhà Dài</h2>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-2">Khám phá cấu trúc không gian mẫu hệ Ê Đê và không gian cộng đồng Ba Na.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            ${areas.map(a => `
+              <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-[#C88A3D]">${a.buildingType === 'nha_dai' ? 'Nhà Dài Ê Đê' : 'Nhà Rông Ba Na'}</span>
+                  <span class="font-mono text-stone-400">${a.dimensions}</span>
+                </div>
+                <h4 class="font-serif font-bold text-stone-900 dark:text-stone-100">${a.nameVi} (${a.indigenousName})</h4>
+                <p class="text-xs text-stone-600 dark:text-stone-400">${a.functionsVi}</p>
+                <div class="p-2 rounded bg-amber-500/10 text-[11px] text-amber-300">
+                  <span class="font-semibold">Kiêng kỵ: </span>${a.taboosVi}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function openDetailModal(recordId) {
+      const r = window.disanData.records.find(item => item.id === recordId);
+      if (!r) return;
+      const body = document.getElementById('detail-modal-body');
+      body.innerHTML = `
+        <div class="space-y-4">
+          <div class="relative h-60 rounded-2xl overflow-hidden bg-stone-950">
+            <img src="${r.imageUrl}" alt="${r.titleVi}" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-black/30"></div>
+            <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-stone-900/80 text-[#E0A96D] text-xs font-mono font-bold">${r.id}</span>
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#C88A3D] text-stone-950 text-xs font-bold">${r.ethnicGroup}</span>
+            <div class="absolute bottom-3 left-3 right-3">
+              <span class="text-xs text-[#E0A96D]">${r.indigenousName}</span>
+              <h2 class="text-xl font-serif font-bold text-white">${r.titleVi}</h2>
+            </div>
+          </div>
+          <p class="text-sm text-stone-300 leading-relaxed">${r.descriptionVi}</p>
+          <div class="grid grid-cols-2 gap-3 text-xs bg-stone-800 p-3 rounded-xl text-stone-300">
+            <div><strong class="text-[#C88A3D]">Địa điểm:</strong> ${r.currentLocation}</div>
+            <div><strong class="text-[#C88A3D]">Loại hình:</strong> ${r.elementOrType}</div>
+            <div><strong class="text-[#C88A3D]">Quy tắc/Kiêng kỵ:</strong> ${r.taboosAndRules || 'Không'}</div>
+            <div><strong class="text-[#C88A3D]">Mã nguồn:</strong> ${r.sourceId}</div>
+          </div>
+        </div>
+      `;
+      document.getElementById('detail-modal').classList.remove('hidden');
+      document.getElementById('detail-modal').classList.add('flex');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detail-modal').classList.add('hidden');
+      document.getElementById('detail-modal').classList.remove('flex');
+    }
+
+    function openAiModal() {
+      document.getElementById('ai-modal').classList.remove('hidden');
+      document.getElementById('ai-modal').classList.add('flex');
+    }
+
+    function closeAiModal() {
+      document.getElementById('ai-modal').classList.add('hidden');
+      document.getElementById('ai-modal').classList.remove('flex');
+    }
+
+    function promptApiKey() {
+      const current = localStorage.getItem('gemini_api_key') || '';
+      const key = prompt('Nhập Gemini API Key của bạn (chỉ lưu trong localStorage):', current);
+      if (key !== null) {
+        localStorage.setItem('gemini_api_key', key.trim());
+        alert('Đã lưu API Key an toàn trên trình duyệt!');
+      }
+    }
+
+    async function sendChatMessage() {
+      const input = document.getElementById('chat-input');
+      const query = input.value.trim();
+      if (!query) return;
+
+      const apiKey = localStorage.getItem('gemini_api_key');
+      if (!apiKey) {
+        promptApiKey();
+        return;
+      }
+
+      const messagesContainer = document.getElementById('chat-messages');
+      messagesContainer.innerHTML += `<div class="p-3 rounded-2xl bg-[#C88A3D] text-stone-950 font-medium ml-auto max-w-[80%]">${query}</div>`;
+      input.value = '';
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+      // Mini-RAG search
+      const q = query.toLowerCase();
+      const matched = window.disanData.records.filter(r => 
+        r.id.toLowerCase().includes(q) ||
+        r.titleVi.toLowerCase().includes(q) ||
+        r.indigenousName.toLowerCase().includes(q) ||
+        r.descriptionVi.toLowerCase().includes(q)
+      ).slice(0, 3);
+
+      const contextText = matched.map(m => `[Record ID: ${m.id}] ${m.titleVi} (${m.indigenousName}): ${m.descriptionVi} [Source ID: ${m.sourceId}]`).join('\n');
+
+      const systemPrompt = `Bạn là Trợ lý Di sản F03 của tác giả Nguyễn Văn Hoàng (PH64335) - Nhóm 2. CHỈ TRẢ LỜI DỰA TRÊN DỮ LIỆU ĐƯỢC CUNG CẤP DƯỚI ĐÂY. Nếu không có thì trả lời: "Không tìm thấy thông tin trong kho tư liệu hiện tại". Bắt buộc trích dẫn Record ID và Source ID.\n\nDữ liệu tư liệu:\n${contextText}`;
+
+      try {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ role: 'user', parts: [{ text: `${systemPrompt}\n\nCâu hỏi: ${query}` }] }]
+          })
+        });
+        const data = await res.json();
+        const ans = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Không tìm thấy thông tin trong kho tư liệu hiện tại.';
+        messagesContainer.innerHTML += `<div class="p-3 rounded-2xl bg-stone-800 text-stone-200">${ans}</div>`;
+      } catch (err) {
+        messagesContainer.innerHTML += `<div class="p-3 rounded-2xl bg-red-900/40 text-red-300">Lỗi kết nối API. Vui lòng kiểm tra lại Gemini API Key.</div>`;
+      }
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    // Initialize application on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCurrentTab();
+    });
+  </script>
+</body>
+</html>

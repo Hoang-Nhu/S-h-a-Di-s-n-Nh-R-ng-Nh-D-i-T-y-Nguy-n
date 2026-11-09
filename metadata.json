@@ -1,0 +1,6 @@
+{
+  "name": "Số hóa Di sản Nhà Rông, Nhà Dài Tây Nguyên",
+  "description": "Bảo tàng số hóa di sản kiến trúc Nhà Rông, Nhà Dài và Không gian cư trú cộng đồng Tây Nguyên (Mã đề tài: F03). Tác giả: Nguyễn Văn Hoàng - PH64335 - Nhóm 2.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
