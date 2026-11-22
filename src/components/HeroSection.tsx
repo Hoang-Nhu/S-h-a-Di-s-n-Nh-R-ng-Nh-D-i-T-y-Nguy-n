@@ -25,8 +25,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-1000 ease-out"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=85')`,
-          filter: 'brightness(0.36) contrast(1.15)'
+          backgroundImage: `url('${HERITAGE_IMAGES.NHA_RONG}')`,
+          filter: 'brightness(0.42) contrast(1.12)'
         }}
       />
       
@@ -54,21 +54,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </span>
         </div>
 
-        {/* Hero Title with Strict Anti-Break Typography & Responsive Scaling */}
+        {/* Hero Title with Clean Vietnamese Typography & Responsive Scaling */}
         <h1 
-          className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-stone-100 max-w-5xl drop-shadow-xl text-balance [word-break:keep-all] [overflow-wrap:normal]"
+          className="font-serif text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-stone-100 max-w-5xl drop-shadow-xl [word-break:normal] [overflow-wrap:normal] [hyphens:none]"
           style={{
-            wordBreak: 'keep-all',
+            wordBreak: 'normal',
             overflowWrap: 'normal',
-            lineHeight: 1.22
+            hyphens: 'none',
+            lineHeight: 1.24
           }}
         >
           {lang === 'vi' ? (
             <>
-              <span className="inline-block whitespace-nowrap">Nhà Rông,</span>{' '}
-              <span className="inline-block whitespace-nowrap">Nhà Dài</span>{' '}
-              <span className="inline-block whitespace-nowrap">và Không gian</span>{' '}
-              <span className="inline-block whitespace-nowrap">cư trú cộng đồng</span>
+              <span className="sm:whitespace-nowrap">Nhà Rông, Nhà Dài</span>{' '}
+              <span className="sm:whitespace-nowrap text-[#E0A96D]">và Không gian</span>{' '}
+              <span className="sm:whitespace-nowrap">cư trú cộng đồng</span>
             </>
           ) : (
             projectInfo.titleEn

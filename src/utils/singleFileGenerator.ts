@@ -19,7 +19,7 @@ export function generateSingleFileHtml(): string {
   <meta property="og:description" content="Khám phá kiến trúc, mặt bằng tương tác, sinh hoạt nghi lễ và trợ lý AI RAG bản địa.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -37,16 +37,16 @@ export function generateSingleFileHtml(): string {
             }
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif']
+            sans: ['Inter', 'Roboto', 'sans-serif'],
+            serif: ['Lora', 'Inter', 'serif']
           }
         }
       }
     }
   </script>
   <style>
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    h1, h2, h3, h4, h5, h6 { text-decoration: none !important; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; word-break: normal; overflow-wrap: normal; hyphens: none; }
+    h1, h2, h3, h4, h5, h6 { text-decoration: none !important; word-break: normal; overflow-wrap: normal; hyphens: none; }
     .pulse-hotspot {
       animation: pulseGlow 2s infinite ease-in-out;
     }
@@ -221,19 +221,18 @@ export function generateSingleFileHtml(): string {
       return \`
         <!-- Hero Section -->
         <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#2D2424] text-white">
-          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80'); filter: brightness(0.35);"></div>
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/nha_rong_kon_tum_1794883777722.jpg'); filter: brightness(0.42);"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-[#2D2424] via-transparent to-[#2D2424]/60"></div>
           
           <div class="relative z-10 max-w-6xl mx-auto px-4 py-16 text-center space-y-6">
             <span class="inline-block px-4 py-1.5 rounded-full bg-[#C88A3D] text-stone-950 font-bold text-xs uppercase tracking-wider">\${p.projectCode}</span>
             <h1 
-              class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-stone-100 max-w-5xl mx-auto drop-shadow-xl text-balance [word-break:keep-all] [overflow-wrap:normal]"
-              style="word-break: keep-all; overflow-wrap: normal; line-height: 1.22;"
+              class="font-serif text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-stone-100 max-w-5xl mx-auto drop-shadow-xl"
+              style="word-break: normal; overflow-wrap: normal; hyphens: none; line-height: 1.24;"
             >
-              <span class="inline-block whitespace-nowrap">Nhà Rông,</span>
-              <span class="inline-block whitespace-nowrap">Nhà Dài</span>
-              <span class="inline-block whitespace-nowrap">và Không gian</span>
-              <span class="inline-block whitespace-nowrap">cư trú cộng đồng</span>
+              <span class="sm:whitespace-nowrap">Nhà Rông, Nhà Dài</span>
+              <span class="sm:whitespace-nowrap text-[#E0A96D]">và Không gian</span>
+              <span class="sm:whitespace-nowrap">cư trú cộng đồng</span>
             </h1>
             <p class="font-serif italic text-base sm:text-xl text-[#E0A96D]">Không gian cư trú cộng đồng 5 tỉnh Tây Nguyên (Kon Tum, Gia Lai, Đắk Lắk, Đắk Nông, Lâm Đồng)</p>
             
@@ -289,7 +288,7 @@ export function generateSingleFileHtml(): string {
             \${records.map(r => \`
               <div onclick="openDetailModal('\${r.id}')" class="cursor-pointer rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 overflow-hidden shadow hover:shadow-xl transition group">
                 <div class="relative h-48 bg-stone-950 overflow-hidden">
-                  <img src="\${r.imageUrl}" alt="\${r.titleVi}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'">
+                  <img src="\${r.imageUrl}" alt="\${r.titleVi}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='./images/nha_rong_kon_tum_1794883777722.jpg'">
                   <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-black/30"></div>
                   <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-stone-900/80 text-[#E0A96D] text-xs font-mono font-bold">\${r.id}</span>
                   <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#C88A3D] text-stone-950 text-xs font-bold">\${r.ethnicGroup}</span>

@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Volume2, VolumeX, ShieldCheck, MapPin, Tag, UserCheck, AlertTriangle, BookOpen, Layers } from 'lucide-react';
 import { HeritageRecord, HeritageSource } from '../data/types';
 import { disanData } from '../data/disanData';
+import { HERITAGE_IMAGES } from '../data/images';
 
 interface RecordDetailModalProps {
   record: HeritageRecord | null;
@@ -35,7 +36,7 @@ export const RecordDetailModal: React.FC<RecordDetailModalProps> = ({
             alt={record.titleVi}
             className="w-full h-full object-cover"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80';
+              (e.target as HTMLImageElement).src = HERITAGE_IMAGES.NHA_RONG;
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-black/30" />

@@ -138,7 +138,7 @@ export const ritualRecords: HeritageRecord[] = [
     informantAge: 71,
     informantRole: 'Nghệ nhân đẽo tượng nhà mồ kiêm người điều hành lễ',
     sourceId: 'SRC-01',
-    imageUrl: HERITAGE_IMAGES.KIEN_TRUC_GO,
+    imageUrl: HERITAGE_IMAGES.TUONG_BEN_NUOC,
     audioTextVi: 'Lễ Bỏ Mả không mang màu sắc bi lụy mà là khúc hoan ca giải phóng linh hồn, nơi tượng nhà mồ gỗ mộc lưu giữ triết lý nhân sinh sâu sắc của người Gia Rai.',
     audioTextEn: 'The Pothi ceremony is a triumphant liberation of the spirit rather than mourning, celebrating the eternal cycle of life.'
   },
@@ -166,7 +166,7 @@ export const ritualRecords: HeritageRecord[] = [
     informantAge: 64,
     informantRole: 'Chủ nhân thừa kế danh hiệu Chủ bến nước đời thứ 4',
     sourceId: 'SRC-07',
-    imageUrl: HERITAGE_IMAGES.BEP_LUA,
+    imageUrl: HERITAGE_IMAGES.TUONG_BEN_NUOC,
     audioTextVi: 'Lễ cúng bến nước nhắc nhở mỗi thành viên buôn làng phải nâng niu từng giọt nước suối rừng, bảo vệ rừng đầu nguồn như bảo vệ chính sinh mệnh mình.',
     audioTextEn: 'The Water Source Rite binds the community to cherish every drop of forest spring water, preserving sacred watersheds.'
   },

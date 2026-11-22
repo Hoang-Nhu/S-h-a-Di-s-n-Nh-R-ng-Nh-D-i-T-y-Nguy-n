@@ -187,7 +187,7 @@ export const architectureRecords: HeritageRecord[] = [
     dimensionOrMaterial: 'Diện tích 25-40m2, ván gỗ kền kền nguyên phiến dày 5cm.',
     taboosAndRules: 'Khách phải để lại dao rựa và cởi giầy dép ở góc hiên trước khi vào nhà.',
     sourceId: 'SRC-07',
-    imageUrl: HERITAGE_IMAGES.BEP_LUA,
+    imageUrl: HERITAGE_IMAGES.NHA_DAI,
     audioTextVi: 'Hiên Drip là nơi đón gió ngàn, điểm dừng chân đầu tiên chan chứa tình hiếu khách của người Ê Đê trước khi bước vào căn nhà dài huyền thoại.',
     audioTextEn: 'The Drip veranda serves as a refreshing threshold of hospitality before one enters the legendary interior of an E De longhouse.'
   },
@@ -208,7 +208,7 @@ export const architectureRecords: HeritageRecord[] = [
     dimensionOrMaterial: 'Chiều dài từ 30m đến hơn 100m, cỏ tranh đan tấm dày 15cm.',
     taboosAndRules: 'Mỗi khi gia đình có con gái lấy chồng và nối thêm gian, mái phải được lợp liền mạch không để lộ vết cắt.',
     sourceId: 'SRC-03',
-    imageUrl: HERITAGE_IMAGES.NHA_RONG,
+    imageUrl: HERITAGE_IMAGES.NHA_DAI,
     audioTextVi: 'Mái nhà dài Ê Đê trải dài tựa tiếng chiêng ngân, có ngôi nhà dài hơn cả trăm mét chứa đựng tới 5 thế hệ cùng quây quần dưới một mái ấm đại gia đình mẫu hệ.',
     audioTextEn: 'The continuous low roofline stretches like a resounding gong echo, accommodating up to five generations under a single matriarchal roof.'
   }

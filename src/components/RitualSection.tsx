@@ -2,6 +2,7 @@ import React from 'react';
 import { Flame, ShieldCheck, Lock, Calendar, UserCheck, Volume2, VolumeX, Eye } from 'lucide-react';
 import { HeritageRecord } from '../data/types';
 import { disanData } from '../data/disanData';
+import { HERITAGE_IMAGES } from '../data/images';
 
 interface RitualSectionProps {
   lang: 'vi' | 'en';
@@ -55,7 +56,7 @@ export const RitualSection: React.FC<RitualSectionProps> = ({
                       alt={rit.titleVi}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80';
+                        (e.target as HTMLImageElement).src = HERITAGE_IMAGES.CONG_CHIENG;
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent" />

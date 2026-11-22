@@ -37,7 +37,7 @@ export const galleryItems: GalleryItem[] = [
     titleVi: 'Nếp nhà dài êm đềm trong buôn Akô Dhông Buôn Ma Thuột',
     titleEn: 'Serene Traditional Longhouse in Ako Dhong Hamlet',
     category: 'dai',
-    imageUrl: HERITAGE_IMAGES.BEP_LUA,
+    imageUrl: HERITAGE_IMAGES.NHA_DAI,
     locationVi: 'TP. Buôn Ma Thuột',
     ethnicGroup: 'Ê Đê',
     photographerOrSource: 'Tư liệu khảo sát F03'
@@ -47,7 +47,7 @@ export const galleryItems: GalleryItem[] = [
     titleVi: 'Đại lễ Cúng Bến Nước đầu mùa mưa',
     titleEn: 'Grand Water Source Blessing Rite at Onset of Rains',
     category: 'ritual',
-    imageUrl: HERITAGE_IMAGES.BEP_LUA,
+    imageUrl: HERITAGE_IMAGES.TUONG_BEN_NUOC,
     locationVi: 'Buôn Kram, Đắk Lắk',
     ethnicGroup: 'Ê Đê',
     photographerOrSource: 'Hồ sơ kiểm kê SVHTTDL'
@@ -67,7 +67,7 @@ export const galleryItems: GalleryItem[] = [
     titleVi: 'Khu tượng nhà mồ Pơ-thi độc mộc giàu tính triết học',
     titleEn: 'Evocative Monolithic Pothi Funerary Statues',
     category: 'ritual',
-    imageUrl: HERITAGE_IMAGES.KIEN_TRUC_GO,
+    imageUrl: HERITAGE_IMAGES.TUONG_BEN_NUOC,
     locationVi: 'Huyện Ia Grai, Gia Lai',
     ethnicGroup: 'Gia Rai',
     photographerOrSource: 'Bảo tàng Dân tộc học VN'
@@ -77,7 +77,7 @@ export const galleryItems: GalleryItem[] = [
     titleVi: 'Gian Gah trang nghiêm với ghế K\'pan dài tít tắp',
     titleEn: 'Noble Gah Chamber with Continuous Kpan Bench',
     category: 'dai',
-    imageUrl: HERITAGE_IMAGES.KIEN_TRUC_GO,
+    imageUrl: HERITAGE_IMAGES.BEP_LUA_GAH,
     locationVi: 'Buôn Akô Dhông, Đắk Lắk',
     ethnicGroup: 'Ê Đê',
     photographerOrSource: 'Tư liệu khảo sát F03'
@@ -87,7 +87,7 @@ export const galleryItems: GalleryItem[] = [
     titleVi: 'Đan lát và bện lạt mây thủ công dựng nhà',
     titleEn: 'Master Rattan Crafting for Traditional Construction',
     category: 'rong',
-    imageUrl: HERITAGE_IMAGES.NHA_RONG,
+    imageUrl: HERITAGE_IMAGES.KIEN_TRUC_GO,
     locationVi: 'Làng Đê Ktu, Gia Lai',
     ethnicGroup: 'Gia Rai',
     photographerOrSource: 'Tư liệu nhóm nghiên cứu F03'

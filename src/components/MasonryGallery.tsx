@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Image, X, ChevronLeft, ChevronRight, Maximize2, MapPin } from 'lucide-react';
 import { galleryItems } from '../data/galleryData';
 import { GalleryItem } from '../data/types';
+import { HERITAGE_IMAGES } from '../data/images';
 
 interface MasonryGalleryProps {
   lang: 'vi' | 'en';
@@ -87,7 +88,7 @@ export const MasonryGallery: React.FC<MasonryGalleryProps> = ({ lang }) => {
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80';
+                  (e.target as HTMLImageElement).src = HERITAGE_IMAGES.NHA_RONG;
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
@@ -157,7 +158,7 @@ export const MasonryGallery: React.FC<MasonryGalleryProps> = ({ lang }) => {
                 alt={filteredItems[lightboxIndex].titleVi}
                 className="max-h-[72vh] max-w-full rounded-2xl object-contain shadow-2xl"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80';
+                  (e.target as HTMLImageElement).src = HERITAGE_IMAGES.NHA_RONG;
                 }}
               />
               <div className="mt-4 text-center text-white max-w-xl">

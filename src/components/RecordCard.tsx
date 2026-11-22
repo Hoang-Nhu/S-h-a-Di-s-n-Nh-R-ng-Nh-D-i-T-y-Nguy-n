@@ -1,6 +1,7 @@
 import React from 'react';
 import { Volume2, VolumeX, Eye, BookOpen, MapPin, Tag } from 'lucide-react';
 import { HeritageRecord } from '../data/types';
+import { HERITAGE_IMAGES } from '../data/images';
 
 interface RecordCardProps {
   record: HeritageRecord;
@@ -27,7 +28,7 @@ export const RecordCard: React.FC<RecordCardProps> = ({
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80';
+            (e.target as HTMLImageElement).src = HERITAGE_IMAGES.NHA_RONG;
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-black/30" />

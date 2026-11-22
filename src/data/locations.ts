@@ -41,7 +41,7 @@ export const heritageLocations: HeritageLocation[] = [
     heritageType: 'Kiến trúc Nhà Rông & Tượng Nhà mồ Pơ-thi',
     descriptionVi: 'Nằm tại huyện Mang Yang, bảo lưu hoàn hảo nhà rông truyền thống với vách nứa đan hoa văn quả trám cùng khu tượng nhà mồ Pơ-thi kỳ vĩ.',
     descriptionEn: 'Preserving customary Gia Rai architecture with rhombus-patterned wicker walls and evocative Pothi funerary sculptures.',
-    imageUrl: HERITAGE_IMAGES.NHA_RONG,
+    imageUrl: HERITAGE_IMAGES.TUONG_BEN_NUOC,
     recordRef: 'REC-KT05'
   },
   {
@@ -55,7 +55,7 @@ export const heritageLocations: HeritageLocation[] = [
     heritageType: 'Quần thể Nhà Dài truyền thống & Cầu thang K\'pan',
     descriptionVi: 'Được mệnh danh là buôn làng đẹp nhất Buôn Ma Thuột với hơn 30 ngôi nhà dài cổ hàng chục mét, rợp bóng cây xanh và tiếng suối Ea Kram róc rách.',
     descriptionEn: 'Known as the most pristine hamlet in Buon Ma Thuot with over 30 traditional longhouses, lush gardens, and living matrilineal customs.',
-    imageUrl: HERITAGE_IMAGES.BEP_LUA,
+    imageUrl: HERITAGE_IMAGES.NHA_DAI,
     recordRef: 'REC-KT03'
   },
   {

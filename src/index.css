@@ -2,19 +2,27 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --font-sans: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Lora", "Inter", serif;
+}
+
 @layer base {
   html, body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
     text-decoration: none !important;
-    word-break: keep-all;
+    word-break: normal;
     overflow-wrap: normal;
-    hyphens: manual;
+    hyphens: none;
   }
 }
 

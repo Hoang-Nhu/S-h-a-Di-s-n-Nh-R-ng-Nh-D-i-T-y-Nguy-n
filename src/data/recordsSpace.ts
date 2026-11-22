@@ -19,7 +19,7 @@ export const spaceRecords: HeritageRecord[] = [
     dimensionOrMaterial: 'Rộng 5.5m - 6.5m, dài từ 15m đến 35m, sàn gỗ bóng láng mài bằng lá ráp.',
     taboosAndRules: 'Phụ nữ không được ngồi chồm hổm trước mặt khách; khách lạ không được tự ý đi qua vách ngăn tiến sâu vào gian Ok phía sau.',
     sourceId: 'SRC-07',
-    imageUrl: HERITAGE_IMAGES.KIEN_TRUC_GO,
+    imageUrl: HERITAGE_IMAGES.BEP_LUA_GAH,
     audioTextVi: 'Gian Gah là linh hồn mở rộng của nhà dài Ê Đê, nơi âm thanh cồng chiêng ngân vang và men rượu cần gắn kết tình nghĩa buôn làng bền chặt.',
     audioTextEn: 'The Gah chamber is the beating heart of the E De longhouse, where gong harmonies and earthen jar wine forge unbreakable communal bonds.'
   },
@@ -145,7 +145,7 @@ export const spaceRecords: HeritageRecord[] = [
     dimensionOrMaterial: 'Diện tích 12m2, 4 cột gỗ căm xe đẽo nhẵn, vách nứa chống ẩm tốt.',
     taboosAndRules: 'Chỉ có bà mẹ mẫu hệ chủ gia đình mới được quyền mở cửa kho lấy thóc giã gạo.',
     sourceId: 'SRC-04',
-    imageUrl: HERITAGE_IMAGES.KIEN_TRUC_GO,
+    imageUrl: HERITAGE_IMAGES.NHA_DAI,
     audioTextVi: 'Kho thóc Sang Ba dựng trên cao với những tấm khiên chống chuột thông minh, thể hiện sự chu toàn của người phụ nữ mẫu hệ bảo vệ nguồn sống gia tộc.',
     audioTextEn: 'The elevated Sang Ba granary with anti-rodent timber shields demonstrates ingenious maternal stewardship over village sustenance.'
   },
@@ -208,7 +208,7 @@ export const spaceRecords: HeritageRecord[] = [
     dimensionOrMaterial: 'Sàn ván ghép thưa 15m2, lan can tre nứa bảo vệ.',
     taboosAndRules: 'Khách đến nhà không được tự tiện đi vào lối sau; lối này dành cho thành viên gia đình vận chuyển củi và nước.',
     sourceId: 'SRC-05',
-    imageUrl: HERITAGE_IMAGES.BEP_LUA,
+    imageUrl: HERITAGE_IMAGES.TUONG_BEN_NUOC,
     audioTextVi: 'Hiên sau Drip kơ-pă thơm mùi ngô nương phơi nắng và những quả bầu khô đựng nước suối mát lịm của các bà mẹ Tây Nguyên.',
     audioTextEn: 'The rear deck preserves the peaceful scent of sun-cured maize and fresh spring water kept in hollowed gourds.'
   }
