@@ -133,16 +133,10 @@
           <span class="w-8 h-8 rounded-lg bg-[#C88A3D] text-stone-950 font-bold flex items-center justify-center">AI</span>
           <div>
             <h3 class="font-serif font-bold text-stone-100 text-sm">Trợ lý Di sản Số học Tây Nguyên (F03)</h3>
-            <p class="text-[11px] text-stone-400">RAG Mini: Trả lời có trích dẫn Record ID & Source ID</p>
+            <p class="text-[11px] text-stone-400">Gemini 2.5 Flash • RAG Mini trích dẫn Record ID & Source ID</p>
           </div>
         </div>
         <button onclick="closeAiModal()" class="text-stone-400 hover:text-white p-2">✕</button>
-      </div>
-
-      <!-- API Key Notice & Config -->
-      <div class="py-2 px-3 bg-amber-500/10 border border-amber-500/20 rounded-xl my-2 flex items-center justify-between text-xs text-amber-300">
-        <span>⚠️ API Key chỉ lưu cục bộ trên trình duyệt (localStorage).</span>
-        <button onclick="promptApiKey()" class="text-xs font-bold underline text-[#E0A96D]">Cài đặt Key</button>
       </div>
 
       <!-- Chat Messages Scroll Area -->
@@ -1867,13 +1861,14 @@
       document.getElementById('ai-modal').classList.remove('flex');
     }
 
-    function promptApiKey() {
-      const current = localStorage.getItem('gemini_api_key') || '';
-      const key = prompt('Nhập Gemini API Key của bạn (chỉ lưu trong localStorage):', current);
-      if (key !== null) {
-        localStorage.setItem('gemini_api_key', key.trim());
-        alert('Đã lưu API Key an toàn trên trình duyệt!');
-      }
+    function appendChatBubble(text, roleClass) {
+      const messagesContainer = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = roleClass;
+      div.style.whiteSpace = 'pre-line';
+      div.textContent = text;
+      messagesContainer.appendChild(div);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
     async function sendChatMessage() {
@@ -1881,16 +1876,8 @@
       const query = input.value.trim();
       if (!query) return;
 
-      const apiKey = localStorage.getItem('gemini_api_key');
-      if (!apiKey) {
-        promptApiKey();
-        return;
-      }
-
-      const messagesContainer = document.getElementById('chat-messages');
-      messagesContainer.innerHTML += `<div class="p-3 rounded-2xl bg-[#C88A3D] text-stone-950 font-medium ml-auto max-w-[80%]">${query}</div>`;
+      appendChatBubble(query, 'p-3 rounded-2xl bg-[#C88A3D] text-stone-950 font-medium ml-auto max-w-[80%]');
       input.value = '';
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
       // Mini-RAG search
       const q = query.toLowerCase();
@@ -1899,27 +1886,30 @@
         r.titleVi.toLowerCase().includes(q) ||
         r.indigenousName.toLowerCase().includes(q) ||
         r.descriptionVi.toLowerCase().includes(q)
-      ).slice(0, 3);
+      ).slice(0, 4);
 
-      const contextText = matched.map(m => `[Record ID: ${m.id}] ${m.titleVi} (${m.indigenousName}): ${m.descriptionVi} [Source ID: ${m.sourceId}]`).join('\n');
-
-      const systemPrompt = `Bạn là Trợ lý Di sản F03 của tác giả Nguyễn Văn Hoàng (PH64335) - Nhóm 2. CHỈ TRẢ LỜI DỰA TRÊN DỮ LIỆU ĐƯỢC CUNG CẤP DƯỚI ĐÂY. Nếu không có thì trả lời: "Không tìm thấy thông tin trong kho tư liệu hiện tại". Bắt buộc trích dẫn Record ID và Source ID.\n\nDữ liệu tư liệu:\n${contextText}`;
+      const contextChunks = (matched.length ? matched : window.disanData.records.slice(0, 3)).map(m =>
+        `[Record ID: ${m.id}] ${m.titleVi} (${m.indigenousName}): ${m.descriptionVi} [Source ID: ${m.sourceId}]`
+      );
 
       try {
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+        const res = await fetch('/api/gemini/rag', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            contents: [{ role: 'user', parts: [{ text: `${systemPrompt}\n\nCâu hỏi: ${query}` }] }]
+            query,
+            lang: 'vi',
+            contextChunks
           })
         });
         const data = await res.json();
-        const ans = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Không tìm thấy thông tin trong kho tư liệu hiện tại.';
-        messagesContainer.innerHTML += `<div class="p-3 rounded-2xl bg-stone-800 text-stone-200">${ans}</div>`;
+        if (!res.ok) {
+          throw new Error(data.error || 'Lỗi máy chủ AI');
+        }
+        appendChatBubble(data.answer || 'Không tìm thấy thông tin trong kho tư liệu hiện tại.', 'p-3 rounded-2xl bg-stone-800 text-stone-200');
       } catch (err) {
-        messagesContainer.innerHTML += `<div class="p-3 rounded-2xl bg-red-900/40 text-red-300">Lỗi kết nối API. Vui lòng kiểm tra lại Gemini API Key.</div>`;
+        appendChatBubble('Lỗi kết nối AI: ' + (err && err.message ? err.message : 'Vui lòng kiểm tra máy chủ và GEMINI_API_KEY.'), 'p-3 rounded-2xl bg-red-900/40 text-red-300');
       }
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
     // Initialize application on load
